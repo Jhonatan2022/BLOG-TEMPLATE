@@ -33,7 +33,7 @@ initialState.push({
   title: "name",
   date: "12/15/2022",
   imgSrc:
-    "https://mail.google.com/mail/u/0?ui=2&ik=275fd1c23b&attid=0.1.0.1&permmsgid=msg-f:1777501211860220460&th=18aaf3ef40c13a2c&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ8n8ZCYPMH-qgmQOVKnoWjpUmbc_ALQh8Tw3vKYmeHsylQ_muW9JQPacnjpeq5x-PmjhmPGtRqYZqQ4yfMZVZ49IJW3UZVWJhQ6utiYaBnTTi06-OZb2qT2dRc&disp=emb",
+    "../../assets/img/1.jpg",
   comments: [
     {
       id: 1,
