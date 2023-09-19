@@ -1,12 +1,15 @@
-import { SideBarLeft } from "../SideBarLeft";
-import { Image } from "../Image";
-import { SideBarRight } from "../SideBarRight";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { NavBar } from "../NavBar";
+import { Home } from "../Home";
 
 function App() {
   return <>
-    <SideBarLeft />
-    <Image />
-    <SideBarRight />
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   </>;
 }
 

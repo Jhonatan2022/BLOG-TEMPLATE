@@ -16,7 +16,9 @@ html {
   display: grid;
   width: 100%;
   height: 100vh;
+  grid-template-rows: 1fr;
   grid-template-columns: 1fr 3fr 1fr;
+  
   gap: 1rem;
 }
 
