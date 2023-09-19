@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.main-container {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 1rem;
+}
+
+/* Nav Styles */
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d6d6d6;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+/* barra de scroll que se genera */
+/* .nav-container::-webkit-scrollbar {
+  display: none;
+} */
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  width: 100%;
+}
+
+li {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  border-bottom: 1px solid #fff;
+  cursor: pointer;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li:hover {
+  background-color: #e8e8e8;
+}
+
+li a {
+  text-decoration: none;
+  color: #000000;
+}
+
+/* half styles */
+.main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e8e8e8;
+  border-radius: 1rem;
+  overflow: hidden;
+  overflow-y: scroll;
+  /* padding: 1rem; */
+}
+
+.card {
+  background-color: #fff;
+  max-width: 90%;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-height: 35rem;
+  overflow: hidden;
+}
+
+.img-container img {
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.6rem;
+  padding: 0.7rem;
+}
+
+.btn-comments {
+  border-radius: 1rem;
+  cursor: pointer;
+  border: none;
+}
+
+.card-date {
+  font-size: 1.2rem;
+}
+
+.btn-options {
+  border-radius: 1rem;
+  cursor: pointer;
+  border: none;
+}
+
+.options {
+  position: relative;
+}
+
+.menu-options {
+  position: absolute;
+  background-color: #f1f1f1;
+  list-style-type: none;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  left: -5rem;
+  overflow: hidden;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.menu-options button {
+  padding: 4px;
+  border: none;
+  width: 100%;
+}
+
+.edit:hover {
+  background-color: #c5eeff;
+}
+
+.delete:hover {
+  background-color: #ffcccc;
+}
+
+.comments-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 1rem;
+  background-color: #ececec;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+  background-color: #dcdcdc;
+  border-radius: 1rem;
+}
+
+.comment {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  grid-template-rows: minmax(3rem, auto);
+  width: 100%;
+  padding: 1rem;
+  background-color: #b1b1b1;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.comment:last-child {
+  margin-bottom: 0;
+}
+
+.avatar-user {
+  grid-area: 1 / 1;
+  display: flex;
+  justify-content: center;
+}
+
+.avatar-user img {
+  cursor: pointer;
+  max-width: 35px;
+  max-height: 35px;
+  border-radius: 50%;
+}
+
+.comment-user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: bold;
+}
+
+.comment-text {
+  grid-area: 2 / 2;
+}
+
+.add-comment-container {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr 6fr 1fr;
+}
+
+.add-comment-container input {
+  grid-area: 1 / 2;
+  padding: 1rem;
+  min-width: 160px;
+  border-radius: 1rem;
+  border: 1px solid #d9d9d9;
+  font-size: 1.2rem;
+}
+
+.add-comment-container input:focus {
+  outline: none;
+  border: 1px solid #8a2be2;
+}
+
+.add-comment-container button {
+  grid-area: 1 / 3;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid #d9d9d9;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+
