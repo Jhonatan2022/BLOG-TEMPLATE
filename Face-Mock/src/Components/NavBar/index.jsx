@@ -1,21 +1,34 @@
 import { NavLink } from "react-router-dom";
+import "./styles.css";
 
 function NavBar() {
   return (
     <header>
-      <nav className="navBar">
-        <ul>
+      <nav className="nabvar">
+        <div className="nabvar-left">
+          <figure className="logo">
+            <img
+              src="https://talento.colsof.co/static/media/LOGO_SONAR_2.1981e9bb6be7ae85aee7.png"
+              alt="logo"
+            />
+          </figure>
+          <input type="text" placeholder="Search" />
+        </div>
+
+        <div className="nabvar-right">
           {routes.map((route) => (
-            <li key={route.to}>
-              <NavLink
-                style={({ isActive }) => ({ color: isActive ? "red" : "blue" })}
-                to={route.to}
-              >
-                {route.label}
-              </NavLink>
-            </li>
+            <NavLink
+              style={({ isActive }) => ({
+                borderBottom: isActive && "2px solid black",
+              })}
+              key={route.to}
+              to={route.to}
+            >
+              {route.label}
+            </NavLink>
           ))}
-        </ul>
+          <button>Dark Mode</button>
+        </div>
       </nav>
     </header>
   );

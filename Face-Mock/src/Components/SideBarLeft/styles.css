@@ -1,0 +1,57 @@
+
+/* Nav Styles */
+.nav-left  {
+  display: flex;
+  justify-content: center;
+  background-color: var(--purple-light);
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.carousel-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 12rem;
+  padding: 2rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #ffffff;
+  margin: 1rem 0; 
+  border-radius: 2rem;
+  transition: background-color 0.3s; /* Animación de cambio de color al pasar el ratón */
+}
+
+.carousel-card:last-child {
+  margin-bottom: 0;
+}
+
+.carousel-card:hover {
+  background-color: var(--purple);
+}
+
+.carousel-card:hover a {
+  color: var(--white);
+}
+
+.carousel-card a {
+  text-decoration: none;
+  color: var(--purple);
+}  
