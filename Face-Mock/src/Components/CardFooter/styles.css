@@ -13,6 +13,10 @@
   font-size: 1.2rem;
 }
 
+input::placeholder {
+  color: var(--purple);
+}
+
 .add-comment-container input:focus {
   outline: none;
   border: 2px solid var(--purple);
@@ -26,4 +30,12 @@
   border: 2px solid var(--purple);
   font-size: 1.2rem;
   cursor: pointer;
+}
+
+.add-comment-container button:hover {
+  background-color: var(--purple);
+}
+
+.add-comment-container button:hover svg{
+  stroke: var(--white);
 }

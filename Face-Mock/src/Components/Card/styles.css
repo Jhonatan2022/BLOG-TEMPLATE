@@ -45,8 +45,11 @@
 
 .card-title {
   font-size: 1.6rem;
+  color: var(--purple);
 }
 
 .card-date {
   font-size: 1.2rem;
+  color: var(--purple);
+  font-weight: 400;
 }
