@@ -1,0 +1,29 @@
+.add-comment-container {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: minmax(4rem, 4rem) 1fr minmax(5rem, 5rem);
+}
+
+.add-comment-container input {
+  grid-area: 1 / 2;
+  padding: 1rem;
+  min-width: 160px;
+  border-radius: 1rem;
+  border: 2px solid var(--purple);
+  font-size: 1.2rem;
+}
+
+.add-comment-container input:focus {
+  outline: none;
+  border: 2px solid var(--purple);
+}
+
+.add-comment-container button {
+  grid-area: 1 / 3;
+  background-color: var(--white);
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 2px solid var(--purple);
+  font-size: 1.2rem;
+  cursor: pointer;
+}

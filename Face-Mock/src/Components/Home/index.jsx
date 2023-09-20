@@ -1,14 +1,15 @@
-import { Image } from "../Image";
+import { Card } from "../Card";
 import { SideBarLeft } from "../SideBarLeft";
 import { SideBarRight } from "../SideBarRight";
+import "./styles.css";
 
 function Home() {
   return (
-    <>
+    <main className="main-container">
       <SideBarLeft />
-      <Image />
+      <Card />
       <SideBarRight />
-    </>
+    </main>
   );
 }
 

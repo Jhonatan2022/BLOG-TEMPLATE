@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./styles.css";
 
 function Comment({ item }) {
   return (
