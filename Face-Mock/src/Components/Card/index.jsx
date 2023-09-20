@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ContextApp } from "../../Context";
 import { Comment } from "../Comment";
-import { ButtonOpenCommnet } from "../ButtonOpenComment";
+import { ButtonsCard } from "../ButtonsCard";
 import { ButtonSeting } from "../ButtonSetting";
 import { CardFooter } from "../CardFooter";
 import "./styles.css";
@@ -23,7 +23,7 @@ function Card() {
           <figure className="img-container">
             <img src={item.imgSrc} alt={item.title} title={item.title} />
           </figure>
-          <ButtonOpenCommnet item={item} />
+          <ButtonsCard item={item} />
           {open === item.id && <Comment item={item} />}
           <CardFooter />
         </div>
