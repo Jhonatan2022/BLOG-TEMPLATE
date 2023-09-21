@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 const IconsPropTypes = {
   color: PropTypes.string,
   size: PropTypes.string,
+  animation: PropTypes.string,
 };
 
 function SettingIcon({ color, size }) {
@@ -90,7 +91,7 @@ function LikeIcon({ color, size }) {
   );
 }
 
-function HeartIcon({ color, size }) {
+function HeartIcon({ color, size, animation }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -100,6 +101,8 @@ function HeartIcon({ color, size }) {
       stroke={color || "#1b1464"}
       width={size || "20"}
       height={size || "20"}
+      className={animation || ""}
+      // className="icon-animation"
     >
       <path
         strokeLinecap="round"

@@ -20,7 +20,7 @@
   grid-template-columns: minmax(auto, auto) minmax(auto, 3rem);
 }
 
-.icon-heart {
+.icon-container span {
   display: flex;
   align-items: center;
   height: 100%;
@@ -43,6 +43,27 @@
   stroke: red;
 }
  */
-.card-content button:hover:nth-child(1) svg {
+
+.icon-heart:hover svg {
   stroke: red;
+}
+
+.isLiked svg {
+  stroke: var(--red);
+  fill: var(--red);
+}
+
+.icon-animation {
+  animation: heartbeat 1s ease-in-out;
+}
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
