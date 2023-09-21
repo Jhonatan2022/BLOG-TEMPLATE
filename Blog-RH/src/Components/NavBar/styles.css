@@ -1,0 +1,54 @@
+.nabvar {
+  display: grid;
+  position: fixed;
+  width: 100%;
+  grid-template-columns: auto 1fr auto;
+  background-color: var(--purple);
+  padding: 0.5rem 2rem;
+  z-index: 2;
+  border-bottom-right-radius: 1rem;
+}
+
+.nabvar-left {
+  display: flex;
+  align-items: center;
+}
+
+.nabvar-left .logo {
+  max-width: 4rem;
+  margin-right: 2rem;
+}
+
+.nabvar-left .logo img {
+  width: 100%;
+}
+
+.nabvar-left input {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+}
+
+input::placeholder {
+  color: var(--purple);
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid var(--purple-light);
+}
+
+.nabvar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nabvar-right a {
+  text-decoration: none;
+  color: var(--white);
+  margin-right: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}

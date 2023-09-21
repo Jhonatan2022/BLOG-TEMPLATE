@@ -1,7 +1,7 @@
-import { useState, useContext} from "react";
+import { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import { ContextApp } from "../../Context";
-import { SettingIcon } from "../Icons";
+import { SettingIcon, DeleteIcon, EditIcon } from "../Icons";
 import "./styles.css";
 
 function ButtonSeting({ id }) {
@@ -23,13 +23,15 @@ function ButtonSeting({ id }) {
         className="btn-options"
         onClick={() => handleOpenOptions(id)}
       >
-        <SettingIcon size='25' />
+        <SettingIcon size="25" />
       </button>
       {openOptions === id && (
         <ul className="menu-options">
-          <button className="edit">Editar</button>
+          <button className="edit">
+            <EditIcon size="25" />
+          </button>
           <button className="delete" onClick={() => handleDelete(id)}>
-            Eliminar
+            <DeleteIcon size="25" />
           </button>
         </ul>
       )}
@@ -38,7 +40,7 @@ function ButtonSeting({ id }) {
 }
 
 ButtonSeting.propTypes = {
-    id: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export { ButtonSeting };

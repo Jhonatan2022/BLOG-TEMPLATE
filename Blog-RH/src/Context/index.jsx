@@ -10,7 +10,28 @@ function ContextProvider({ children }) {
   const handleLike = (id) => {
     const newData = data.map((item) => {
       if (item.id === id) {
-        item.likes += 1;
+        item.isLiked = !item.isLiked;
+        item.isLiked ? item.likes++ : item.likes--;
+      }
+      return item;
+    });
+    setData(newData);
+  };
+
+  const idCommentImprovised = (id) => {
+    return id + 1;
+  };
+
+  const handleComment = (id, comment) => {
+    const newData = data.map((item) => {
+      const comments = item.comments.length;
+      if (item.id === id) {
+        item.comments.push({
+          id: idCommentImprovised(comments),
+          userName: "Manuel Hernandez",
+          userImage: "https://unavatar.io/github/jhonatan2022",
+          comment: comment,
+        });
       }
       return item;
     });
@@ -25,6 +46,7 @@ function ContextProvider({ children }) {
         open,
         setOpen,
         handleLike,
+        handleComment,
       }}
     >
       {children}
@@ -41,6 +63,7 @@ export { ContextProvider, ContextApp };
 const initialState = [];
 initialState.push({
   id: 1,
+  isLiked: false,
   likes: 5,
   title: "name",
   date: "12/15/2022",
@@ -63,6 +86,8 @@ initialState.push({
 });
 initialState.push({
   id: 2,
+  isLiked: false,
+  likes: 0,
   title: "name",
   date: "12/15/2022",
   imgSrc:
@@ -84,6 +109,7 @@ initialState.push({
 });
 initialState.push({
   id: 3,
+  isLiked: false,
   likes: 0,
   title: "name",
   date: "12/15/2022",
@@ -106,6 +132,7 @@ initialState.push({
 });
 initialState.push({
   id: 4,
+  isLiked: false,
   title: "name",
   date: "12/15/2022",
   imgSrc:
@@ -127,10 +154,11 @@ initialState.push({
 });
 initialState.push({
   id: 5,
+  isLiked: false,
   title: "name",
   date: "12/15/2022",
   imgSrc:
-    "https://github.com/Jhonatan2022/C-PROD/blob/main/Face-Mock/Assets/5.png",
+    "https://github.com/Jhonatan2022/C-PROD/blob/88de7fb0266f9af51c5c9179bf6dbe2ef9a6aa01/Face-Mock/Assets/5.png",
   comments: [
     {
       id: 1,

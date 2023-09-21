@@ -25,7 +25,7 @@ function Card() {
           </figure>
           <ButtonsCard item={item} />
           {open === item.id && <Comment item={item} />}
-          <CardFooter />
+          <CardFooter id={item.id} />
         </div>
       ))}
     </section>

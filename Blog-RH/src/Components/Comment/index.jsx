@@ -12,7 +12,7 @@ function Comment({ item }) {
           <span className="info-comment">
             <span className="name-user">{comment.userName}</span>
             <br />
-            <p className="commnet-text">{comment.comment}</p>
+            <p className="comment-text">{comment.comment}</p>
           </span>
         </div>
       ))}
