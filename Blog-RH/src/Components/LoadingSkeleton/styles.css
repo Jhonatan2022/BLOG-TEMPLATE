@@ -1,0 +1,62 @@
+/* Estilos para la barra de carga estilo gradiente */
+.loading-bar {
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, rgba(250, 250, 250, 1), rgb(200, 199, 199));
+  background-size: 400% 400%;
+  animation: loadingAnimation 3s ease-in-out infinite;
+}
+
+/* Animación para la barra de carga estilo gradiente */
+@keyframes loadingAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.img-container {
+  min-height: 355px;
+}
+
+/* Estilos de carga para otros elementos */
+.card.loading,
+.card-title.loading,
+.btn-options.loading,
+.card-date.loading,
+.img.loading,
+.icon-container.loading,
+.icon-heart.loading,
+.count-item.loading,
+.comments-container.loading,
+.comments.loading,
+.comment.loading,
+.avatar-user img.loading,
+.name-user.loading,
+.comment-text.loading,
+.add-comment-container.loading,
+.add-comment.loading,
+.btn-send.loading {
+  background-color: #f0f0f0;
+  animation: loading 1.5s infinite;
+}
+
+/* Animación de carga para otros elementos */
+@keyframes loading {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* Resto de los estilos para la tarjeta y los comentarios (los mismos que proporcionaste anteriormente) */

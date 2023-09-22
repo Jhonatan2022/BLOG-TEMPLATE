@@ -5,7 +5,7 @@ import { SendIcon } from "../Icons";
 import "./styles.css";
 
 function CardFooter({ id }) {
-  const { handleComment, setOpen, open } = useContext(ContextApp);
+  const { handleComment } = useContext(ContextApp);
   const [textComment, setTextComment] = useState("");
 
   const handleInput = (e) => {
@@ -16,7 +16,6 @@ function CardFooter({ id }) {
     (id, textComment) => {
       handleComment(id, textComment);
       setTextComment("");
-      setOpen(open === id ? false : id);
     },
     [handleComment]
   );
@@ -30,7 +29,7 @@ function CardFooter({ id }) {
   return (
     <div className="add-comment-container">
       <picture className="avatar-user">
-        <img src="https://media.licdn.com/dms/image/C4E03AQGOb2QbOyDZMA/profile-displayphoto-shrink_800_800/0/1553644732460?e=1700697600&v=beta&t=dqcrf50Obbs18ICzgwN1TDahp9ISwTKk8eEUqQIpmQY" alt="user" />
+        <img src="../../../Assets/Alejandro.jpg" alt="user" />
       </picture>
       <input
         type="text"
