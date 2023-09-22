@@ -153,6 +153,26 @@ function EditIcon({ color, size }) {
   );
 }
 
+function CancelIcon({ color, size }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={4}
+      stroke={color || "#1b1464"}
+      width={size || "20"}
+      height={size || "20"}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M6 18L18 6M6 6l12 12"
+      />
+    </svg>
+  );
+}
+
 SettingIcon.propTypes = IconsPropTypes;
 CommentIcon.propTypes = IconsPropTypes;
 SendIcon.propTypes = IconsPropTypes;
@@ -160,5 +180,15 @@ LikeIcon.propTypes = IconsPropTypes;
 HeartIcon.propTypes = IconsPropTypes;
 DeleteIcon.propTypes = IconsPropTypes;
 EditIcon.propTypes = IconsPropTypes;
+CancelIcon.propTypes = IconsPropTypes;
 
-export { SettingIcon, CommentIcon, SendIcon, LikeIcon, HeartIcon, DeleteIcon, EditIcon };
+export {
+  SettingIcon,
+  CommentIcon,
+  SendIcon,
+  LikeIcon,
+  HeartIcon,
+  DeleteIcon,
+  EditIcon,
+  CancelIcon,
+};
