@@ -1,11 +1,30 @@
 import PropTypes from "prop-types";
-import { useContext } from "react";
+import { useCallback, useContext, useState } from "react";
 import { ContextApp } from "../../Context";
 import { CancelIcon } from "../Icons";
 import "./styles.css";
 
 function EditModal({ data }) {
-  const { setShowModal } = useContext(ContextApp);
+  const { setShowModal, handleEditPost, setOpenOptions } = useContext(ContextApp);
+  const [valueTitle, setValueTitle] = useState(data.title);
+  const [valueImgSrc, setValueImgSrc] = useState(data.imgSrc);
+
+  const handleEditPostCallback = useCallback(
+    (id, title, imgSrc) => {
+      handleEditPost(id, title, imgSrc);
+      setShowModal(false);
+      setOpenOptions(false);
+    },
+    [handleEditPost, setShowModal, setOpenOptions]
+  );
+
+  const handleTitle = (e) => {
+    setValueTitle(e.target.value);
+  };
+
+  const handleImgSrc = (e) => {
+    setValueImgSrc(e.target.value);
+  };
 
   return (
     <div className="modal-container">
@@ -13,13 +32,31 @@ function EditModal({ data }) {
         <div className="header-modal">
           <h2>Edit Post</h2>
           <button className="close-button" onClick={() => setShowModal(false)}>
-            <CancelIcon />  
+            <CancelIcon />
           </button>
         </div>
         <form className="form">
-          <input className="add-comment-container" type="text" defaultValue={data.title} />
-          <input className="add-comment-container" type="text" defaultValue={data.imgSrc} />
-          <button>Save</button>
+          <input
+            className="add-comment-container"
+            type="text"
+            defaultValue={valueTitle}
+            onChange={handleTitle}
+          />
+          <input
+            className="add-comment-container"
+            type="text"
+            defaultValue={valueImgSrc}
+            onChange={handleImgSrc}
+          />
+          <button
+            type="button"
+            disabled={!valueTitle.trim() || !valueImgSrc.trim()}
+            onClick={() =>
+              handleEditPostCallback(data.id, valueTitle, valueImgSrc)
+            }
+          >
+            Save
+          </button>
         </form>
       </div>
     </div>
