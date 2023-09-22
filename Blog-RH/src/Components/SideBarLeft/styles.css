@@ -1,11 +1,11 @@
-
 /* Nav Styles */
-.nav-left  {
+.nav-left {
   display: flex;
   justify-content: center;
-  background-color: var(--purple-light);
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
+  /* background-color: var(--purple-light); */
+  box-shadow: var(--box-shadow-cards);
+  background-color: #ffffffec;
+  border-radius: 0 1rem 0 0;
   overflow: hidden;
   overflow-y: scroll;
 }
@@ -29,12 +29,14 @@ nav {
   align-items: center;
   width: 100%;
   min-height: 12rem;
-  padding: 2rem;
-  font-size: 1.6rem;
+  /* padding: 2rem; */
+  font-size: 1.8rem;
+  letter-spacing: .2rem;
+  border: 2px solid var(--purple);
   font-weight: bold;
   cursor: pointer;
   background-color: #ffffff;
-  margin: 1rem 0; 
+  margin: 1rem 0;
   border-radius: 2rem;
   transition: background-color 0.3s; /* Animación de cambio de color al pasar el ratón */
 }
@@ -54,4 +56,4 @@ nav {
 .carousel-card a {
   text-decoration: none;
   color: var(--purple);
-}  
+}

@@ -30,8 +30,8 @@ function ContextProvider({ children }) {
       if (item.id === id) {
         item.comments.push({
           id: idCommentImprovised(comments),
-          userName: "Manuel Hernandez",
-          userImage: "https://unavatar.io/github/jhonatan2022",
+          userName: "Alejandro Sighinolfi",
+          userImage: "https://media.licdn.com/dms/image/C4E03AQGOb2QbOyDZMA/profile-displayphoto-shrink_800_800/0/1553644732460?e=1700697600&v=beta&t=dqcrf50Obbs18ICzgwN1TDahp9ISwTKk8eEUqQIpmQY",
           comment: comment,
         });
       }
@@ -95,94 +95,103 @@ initialState.push({
   id: 1,
   isLiked: false,
   likes: 5,
-  title: "name",
+  title: "Mejore su salud y su bienestar",
   date: "12/15/2022",
   imgSrc: "../../Assets/1.png",
-  comments: [],
+  comments: [
+    {
+      id: 1,
+      userName: "Deyanira Rodríguez Garzón",
+      userImage: "https://media.licdn.com/dms/image/C4E03AQEvAuemDaFbgg/profile-displayphoto-shrink_800_800/0/1524704387600?e=1700697600&v=beta&t=LGXz6j7xMh6hxDhWk62a6drfvsgVaxM61uiTtit0u8E",
+      comment: "Gracias por la inforación",
+    }
+  ],
 });
 initialState.push({
   id: 2,
   isLiked: false,
-  likes: 0,
-  title: "name",
+  likes: 1,
+  title: "Analista de inventarios área administración DAAS y activos",
   date: "12/15/2022",
   imgSrc: "../../Assets/2.png",
   comments: [
     {
       id: 1,
-      userName: "hola 2",
-      userImage: "https://unavatar.io/github/stefanone",
-      comment: "second card",
+      userName: "Andres Ardila",
+      userImage: "https://media.licdn.com/dms/image/C5603AQGqBwUShDHiYw/profile-displayphoto-shrink_800_800/0/1648120990463?e=1700697600&v=beta&t=hxjkbFeocSaxu2B8WhJNBHtgvLKyHNGe8B81dDRn1i8",
+      comment: "Gracias por la inforación",
     },
     {
       id: 2,
-      userName: "hola2",
-      userImage: "https://unavatar.io/github/juanpablogdl",
-      comment: "second card",
+      userName: "Deyanira Rodríguez Garzón",
+      userImage: "https://media.licdn.com/dms/image/C4E03AQEvAuemDaFbgg/profile-displayphoto-shrink_800_800/0/1524704387600?e=1700697600&v=beta&t=LGXz6j7xMh6hxDhWk62a6drfvsgVaxM61uiTtit0u8E",
+      comment: "Maravillosa Oferta",
     },
   ],
 });
 initialState.push({
   id: 3,
   isLiked: false,
-  likes: 0,
-  title: "name",
+  likes: 2,
+  title: "Cierres viales los días 25 al 29 de septiembre",
   date: "12/15/2022",
   imgSrc: "../../Assets/3.png",
   comments: [
     {
       id: 1,
-      userName: "hola 3",
-      userImage: "https://unavatar.io/github/jhonatan2022",
-      comment: "tercera publicacion",
+      userName: "Andres Ardila",
+      userImage: "https://media.licdn.com/dms/image/C5603AQGqBwUShDHiYw/profile-displayphoto-shrink_800_800/0/1648120990463?e=1700697600&v=beta&t=hxjkbFeocSaxu2B8WhJNBHtgvLKyHNGe8B81dDRn1i8",
+      comment: "Gracias por la inforación",
     },
     {
       id: 2,
-      userName: "hola 3",
-      userImage: "https://unavatar.io/github/manuelduarte077",
-      comment: "Comment 2",
+      userName: "Deyanira Rodríguez Garzón",
+      userImage: "https://media.licdn.com/dms/image/C4E03AQEvAuemDaFbgg/profile-displayphoto-shrink_800_800/0/1524704387600?e=1700697600&v=beta&t=LGXz6j7xMh6hxDhWk62a6drfvsgVaxM61uiTtit0u8E",
+      comment: "Importante!!",
     },
   ],
 });
 initialState.push({
   id: 4,
   isLiked: false,
-  title: "name",
+  likes: 2,
+  title: "Feliz día del amor y la amistad",
   date: "12/15/2022",
   imgSrc: "../../Assets/4.png",
   comments: [
     {
       id: 1,
-      userName: "hola 3",
-      userImage: "https://unavatar.io/github/jhonatan2022",
-      comment: "tercera publicacion",
+      userName: "Andres Ardila",
+      userImage: "https://media.licdn.com/dms/image/C5603AQGqBwUShDHiYw/profile-displayphoto-shrink_800_800/0/1648120990463?e=1700697600&v=beta&t=hxjkbFeocSaxu2B8WhJNBHtgvLKyHNGe8B81dDRn1i8",
+      comment: "Gracias por la inforación",
     },
     {
       id: 2,
-      userName: "hola 3",
-      userImage: "https://unavatar.io/github/manuelduarte077",
-      comment: "Comment 2",
+      userName: "Deyanira Rodríguez Garzón",
+      userImage: "https://media.licdn.com/dms/image/C4E03AQEvAuemDaFbgg/profile-displayphoto-shrink_800_800/0/1524704387600?e=1700697600&v=beta&t=LGXz6j7xMh6hxDhWk62a6drfvsgVaxM61uiTtit0u8E",
+      comment: "Feliz día para todos",
     },
   ],
 });
 initialState.push({
   id: 5,
   isLiked: false,
-  title: "name",
+  likes: 2,
+  title: "Inconvenientes de movilidad debido al día del carro",
   date: "12/15/2022",
   imgSrc: "../../Assets/5.png",
   comments: [
     {
       id: 1,
-      userName: "hola 3",
-      userImage: "https://unavatar.io/github/jhonatan2022",
-      comment: "tercera publicacion",
+      userName: "Andres Ardila",
+      userImage: "https://media.licdn.com/dms/image/C5603AQGqBwUShDHiYw/profile-displayphoto-shrink_800_800/0/1648120990463?e=1700697600&v=beta&t=hxjkbFeocSaxu2B8WhJNBHtgvLKyHNGe8B81dDRn1i8",
+      comment: "Gracias por la inforación",
     },
     {
       id: 2,
-      userName: "hola 3",
-      userImage: "https://unavatar.io/github/manuelduarte077",
-      comment: "Comment 2",
+      userName: "Deyanira Rodríguez Garzón",
+      userImage: "https://media.licdn.com/dms/image/C4E03AQEvAuemDaFbgg/profile-displayphoto-shrink_800_800/0/1524704387600?e=1700697600&v=beta&t=LGXz6j7xMh6hxDhWk62a6drfvsgVaxM61uiTtit0u8E",
+      comment: "Importante!!",
     },
   ],
 });

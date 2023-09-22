@@ -40,7 +40,7 @@ function NavBar() {
 
 const routes = [];
 routes.push({ to: "/", label: "Home" });
-routes.push({ to: "/about", label: "About" });
-routes.push({ to: "/contact", label: "Contact" });
+// routes.push({ to: "/about", label: "About" });
+// routes.push({ to: "/contact", label: "Contact" });
 
 export { NavBar };

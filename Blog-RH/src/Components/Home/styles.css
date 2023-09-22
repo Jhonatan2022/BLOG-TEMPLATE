@@ -4,6 +4,7 @@
   height: 100vh;
   overflow: hidden;
   padding: 6rem 0 0;
+  background: var(--purple-light);
   grid-template-columns: minmax(20%, 20%) minmax(60%, 60%) minmax(20%, 20%);
   gap: 6rem;
 }
