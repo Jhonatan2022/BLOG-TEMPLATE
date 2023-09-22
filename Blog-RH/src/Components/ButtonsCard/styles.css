@@ -54,7 +54,8 @@
 }
 
 .icon-animation {
-  animation: heartbeat 1s ease-in-out;
+  animation: heartbeat 1s ease-in-out infinite;
+  transform-origin: center center;
 }
 @keyframes heartbeat {
   0% {
@@ -62,6 +63,7 @@
   }
   50% {
     transform: scale(1.2);
+    opacity: 0.5;
   }
   100% {
     transform: scale(1);

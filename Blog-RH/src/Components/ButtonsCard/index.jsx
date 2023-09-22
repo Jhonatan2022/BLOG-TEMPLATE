@@ -9,19 +9,31 @@ function ButtonsCard({ item }) {
   const [isAnimated, setIsAnimated] = useState(false);
 
   const likes = item.likes === 0 ? "" : item.likes;
+  const comments =
+    item.comments.length === 0 ? (
+      ""
+    ) : (
+      <button className="icon-container" onClick={() => handleOpen(item.id)}>
+        <span className="count-item two">{item.comments.length}</span>
+        <CommentIcon size="25" />
+      </button>
+    );
 
   const handleOpen = (id) => {
     setOpen(open === id ? false : id);
   };
 
-  const handleLikeCallback = useCallback((id)=> {
-    setIsAnimated(true);
+  const handleLikeCallback = useCallback(
+    (id) => {
+      setIsAnimated(true);
 
-    setTimeout(() => {
-      setIsAnimated(false);
-      handleLike(id);
-    }, 300);
-  }, [handleLike])
+      setTimeout(() => {
+        setIsAnimated(false);
+        handleLike(id);
+      }, 220);
+    },
+    [handleLike]
+  );
 
   const classIsLiked = item.isLiked ? "isLiked" : "icon-heart ";
 
@@ -36,10 +48,7 @@ function ButtonsCard({ item }) {
         </span>
         <span className="count-item">{likes}</span>
       </button>
-      <button className="icon-container" onClick={() => handleOpen(item.id)}>
-        <span className="count-item two">{item.comments.length}</span>
-        <CommentIcon size="25" />
-      </button>
+      {comments}
     </div>
   );
 }

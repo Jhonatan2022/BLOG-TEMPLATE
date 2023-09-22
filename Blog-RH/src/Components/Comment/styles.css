@@ -1,14 +1,19 @@
-.comments {
-  display: grid;
-  grid-template-columns: auto;
-  padding: 1.5rem 0 1.5rem 4.5rem;
+.comments-container{
+  margin-left: 4.5rem;
+  max-height: 15rem;
   margin-bottom: 1rem;
+  overflow: hidden;
+  overflow-y: scroll;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }
 
 .comment {
   display: grid;
   grid-template-columns: minmax(4rem, 4rem) auto;
-  padding: 1rem;
+  padding: 1rem 1rem 0;
   background-color: var(--purple);
   border-radius: 1rem;
   font-size: 1.2rem;
