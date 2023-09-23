@@ -8,6 +8,7 @@ function ContextProvider({ children }) {
   const [open, setOpen] = useState(false);
   const [openOptions, setOpenOptions] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleLike = (id) => {
     const newData = data.map((item) => {
@@ -31,7 +32,7 @@ function ContextProvider({ children }) {
         item.comments.push({
           id: idCommentImprovised(comments),
           userName: "Alejandro Sighinolfi",
-          userImage: "https://media.licdn.com/dms/image/C4E03AQGOb2QbOyDZMA/profile-displayphoto-shrink_800_800/0/1553644732460?e=1700697600&v=beta&t=dqcrf50Obbs18ICzgwN1TDahp9ISwTKk8eEUqQIpmQY",
+          userImage: "../../Assets/Alejandro.jpg",
           comment: comment,
         });
       }
@@ -56,6 +57,7 @@ function ContextProvider({ children }) {
     open,
     openOptions,
     showModal,
+    loading,
   };
 
   const statesModifiers = {
@@ -63,6 +65,7 @@ function ContextProvider({ children }) {
     setOpen,
     setOpenOptions,
     setShowModal,
+    setLoading,
   };
 
   const actions = {
@@ -101,8 +104,8 @@ initialState.push({
   comments: [
     {
       id: 1,
-      userName: "Deyanira Rodríguez Garzón",
-      userImage: "https://media.licdn.com/dms/image/C4E03AQEvAuemDaFbgg/profile-displayphoto-shrink_800_800/0/1524704387600?e=1700697600&v=beta&t=LGXz6j7xMh6hxDhWk62a6drfvsgVaxM61uiTtit0u8E",
+      userName: "Rocio Hernández Kopp",
+      userImage: "../../Assets/Rocio.jpg",
       comment: "Gracias por la inforación",
     }
   ],
@@ -118,13 +121,13 @@ initialState.push({
     {
       id: 1,
       userName: "Andres Ardila",
-      userImage: "https://media.licdn.com/dms/image/C5603AQGqBwUShDHiYw/profile-displayphoto-shrink_800_800/0/1648120990463?e=1700697600&v=beta&t=hxjkbFeocSaxu2B8WhJNBHtgvLKyHNGe8B81dDRn1i8",
+      userImage: "../../Assets/Andres.jpg",
       comment: "Gracias por la inforación",
     },
     {
       id: 2,
-      userName: "Deyanira Rodríguez Garzón",
-      userImage: "https://media.licdn.com/dms/image/C4E03AQEvAuemDaFbgg/profile-displayphoto-shrink_800_800/0/1524704387600?e=1700697600&v=beta&t=LGXz6j7xMh6hxDhWk62a6drfvsgVaxM61uiTtit0u8E",
+      userName: "Rocio Hernández Kopp",
+      userImage: "../../Assets/Rocio.jpg",
       comment: "Maravillosa Oferta",
     },
   ],
@@ -140,13 +143,13 @@ initialState.push({
     {
       id: 1,
       userName: "Andres Ardila",
-      userImage: "https://media.licdn.com/dms/image/C5603AQGqBwUShDHiYw/profile-displayphoto-shrink_800_800/0/1648120990463?e=1700697600&v=beta&t=hxjkbFeocSaxu2B8WhJNBHtgvLKyHNGe8B81dDRn1i8",
+      userImage: "../../Assets/Andres.jpg",
       comment: "Gracias por la inforación",
     },
     {
       id: 2,
-      userName: "Deyanira Rodríguez Garzón",
-      userImage: "https://media.licdn.com/dms/image/C4E03AQEvAuemDaFbgg/profile-displayphoto-shrink_800_800/0/1524704387600?e=1700697600&v=beta&t=LGXz6j7xMh6hxDhWk62a6drfvsgVaxM61uiTtit0u8E",
+      userName: "Rocio Hernández Kopp",
+      userImage: "../../Assets/Rocio.jpg",
       comment: "Importante!!",
     },
   ],
@@ -162,13 +165,13 @@ initialState.push({
     {
       id: 1,
       userName: "Andres Ardila",
-      userImage: "https://media.licdn.com/dms/image/C5603AQGqBwUShDHiYw/profile-displayphoto-shrink_800_800/0/1648120990463?e=1700697600&v=beta&t=hxjkbFeocSaxu2B8WhJNBHtgvLKyHNGe8B81dDRn1i8",
+      userImage: "../../Assets/Andres.jpg",
       comment: "Gracias por la inforación",
     },
     {
       id: 2,
-      userName: "Deyanira Rodríguez Garzón",
-      userImage: "https://media.licdn.com/dms/image/C4E03AQEvAuemDaFbgg/profile-displayphoto-shrink_800_800/0/1524704387600?e=1700697600&v=beta&t=LGXz6j7xMh6hxDhWk62a6drfvsgVaxM61uiTtit0u8E",
+      userName: "Rocio Hernández Kopp",
+      userImage: "../../Assets/Rocio.jpg",
       comment: "Feliz día para todos",
     },
   ],
@@ -184,13 +187,13 @@ initialState.push({
     {
       id: 1,
       userName: "Andres Ardila",
-      userImage: "https://media.licdn.com/dms/image/C5603AQGqBwUShDHiYw/profile-displayphoto-shrink_800_800/0/1648120990463?e=1700697600&v=beta&t=hxjkbFeocSaxu2B8WhJNBHtgvLKyHNGe8B81dDRn1i8",
+      userImage: "../../Assets/Andres.jpg",
       comment: "Gracias por la inforación",
     },
     {
       id: 2,
-      userName: "Deyanira Rodríguez Garzón",
-      userImage: "https://media.licdn.com/dms/image/C4E03AQEvAuemDaFbgg/profile-displayphoto-shrink_800_800/0/1524704387600?e=1700697600&v=beta&t=LGXz6j7xMh6hxDhWk62a6drfvsgVaxM61uiTtit0u8E",
+      userName: "Rocio Hernández Kopp",
+      userImage: "../../Assets/Rocio.jpg",
       comment: "Importante!!",
     },
   ],
