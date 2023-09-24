@@ -61,7 +61,7 @@
   min-width: 160px;
   border-radius: 1rem;
   border: 2px solid var(--purple);
-  font-size: 1.2rem;
+  font-size: 1.6rem;
 }
 
 .form button {
@@ -71,6 +71,7 @@
   border: 2px solid var(--purple);
   font-size: 1.3rem;
   cursor: pointer;
+  letter-spacing: .2rem;
 }
 
 

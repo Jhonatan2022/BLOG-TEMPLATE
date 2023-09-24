@@ -9,7 +9,7 @@ import { LoadingSkeleton } from "../LoadingSkeleton";
 import "./styles.css";
 
 function Card() {
-  const { data, open, loading, setLoading } = useContext(ContextApp);
+  const { filterData, open, loading, setLoading } = useContext(ContextApp);
 
   useEffect(() => {
     setLoading(true);
@@ -21,8 +21,8 @@ function Card() {
   return (
     <section className="main-section">
       {loading && <LoadingSkeleton />}
-      {data.length === 0 && <h1 className="no-data">No hay datos</h1>}
-      {data.map((item) => (
+      {filterData.length === 0 && <h1 className="no-data">No hay datos</h1>}
+      {filterData.map((item) => (
         <div className="card" key={item.id}>
           <div className="card-header">
             <h2 className="card-title">{item.title}</h2>
