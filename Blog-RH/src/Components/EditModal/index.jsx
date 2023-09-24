@@ -30,7 +30,7 @@ function EditModal({ data }) {
     <div className="modal-container">
       <div className="modal">
         <div className="header-modal">
-          <h2>Edit Post</h2>
+          <h2>Editar Publicación</h2>
           <button className="close-button" onClick={() => setShowModal(false)}>
             <CancelIcon />
           </button>
@@ -55,7 +55,7 @@ function EditModal({ data }) {
               handleEditPostCallback(data.id, valueTitle, valueImgSrc)
             }
           >
-            Save
+            Guardar Cambios
           </button>
         </form>
       </div>

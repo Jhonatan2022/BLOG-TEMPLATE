@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 const ContextApp = createContext();
 
@@ -9,6 +9,20 @@ function ContextProvider({ children }) {
   const [openOptions, setOpenOptions] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [searchData, setSearchData] = useState(""); // Valor input search
+  const [filterData, setFilterData] = useState(data); // Publicaciones filtradas
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const filtered = data.filter((item) => {
+        return item.title.toLowerCase().includes(searchData.toLowerCase());
+      });
+      setFilterData(filtered); // Actualiza el estado de las publicaciones filtradas
+    }, 300); // 300 milisegundos
+
+    // Limpia el temporizador anterior en cada cambio de searchData
+    return () => clearTimeout(timer);
+  }, [data, searchData]);
 
   const handleLike = (id) => {
     const newData = data.map((item) => {
@@ -58,6 +72,8 @@ function ContextProvider({ children }) {
     openOptions,
     showModal,
     loading,
+    searchData,
+    filterData, // Publicaciones filtradas para el contexto
   };
 
   const statesModifiers = {
@@ -66,6 +82,7 @@ function ContextProvider({ children }) {
     setOpenOptions,
     setShowModal,
     setLoading,
+    setSearchData,
   };
 
   const actions = {
@@ -93,108 +110,109 @@ ContextProvider.propTypes = {
 
 export { ContextProvider, ContextApp };
 
-const initialState = [];
-initialState.push({
-  id: 1,
-  isLiked: false,
-  likes: 5,
-  title: "Mejore su salud y su bienestar",
-  date: "12/15/2022",
-  imgSrc: "../../Assets/1.png",
-  comments: [
-    {
-      id: 1,
-      userName: "Rocio Hernández Kopp",
-      userImage: "../../Assets/Rocio.jpg",
-      comment: "Gracias por la inforación",
-    }
-  ],
-});
-initialState.push({
-  id: 2,
-  isLiked: false,
-  likes: 1,
-  title: "Analista de inventarios área administración DAAS y activos",
-  date: "12/15/2022",
-  imgSrc: "../../Assets/2.png",
-  comments: [
-    {
-      id: 1,
-      userName: "Andres Ardila",
-      userImage: "../../Assets/Andres.jpg",
-      comment: "Gracias por la inforación",
-    },
-    {
-      id: 2,
-      userName: "Rocio Hernández Kopp",
-      userImage: "../../Assets/Rocio.jpg",
-      comment: "Maravillosa Oferta",
-    },
-  ],
-});
-initialState.push({
-  id: 3,
-  isLiked: false,
-  likes: 2,
-  title: "Cierres viales los días 25 al 29 de septiembre",
-  date: "12/15/2022",
-  imgSrc: "../../Assets/3.png",
-  comments: [
-    {
-      id: 1,
-      userName: "Andres Ardila",
-      userImage: "../../Assets/Andres.jpg",
-      comment: "Gracias por la inforación",
-    },
-    {
-      id: 2,
-      userName: "Rocio Hernández Kopp",
-      userImage: "../../Assets/Rocio.jpg",
-      comment: "Importante!!",
-    },
-  ],
-});
-initialState.push({
-  id: 4,
-  isLiked: false,
-  likes: 2,
-  title: "Feliz día del amor y la amistad",
-  date: "12/15/2022",
-  imgSrc: "../../Assets/4.png",
-  comments: [
-    {
-      id: 1,
-      userName: "Andres Ardila",
-      userImage: "../../Assets/Andres.jpg",
-      comment: "Gracias por la inforación",
-    },
-    {
-      id: 2,
-      userName: "Rocio Hernández Kopp",
-      userImage: "../../Assets/Rocio.jpg",
-      comment: "Feliz día para todos",
-    },
-  ],
-});
-initialState.push({
-  id: 5,
-  isLiked: false,
-  likes: 2,
-  title: "Inconvenientes de movilidad debido al día del carro",
-  date: "12/15/2022",
-  imgSrc: "../../Assets/5.png",
-  comments: [
-    {
-      id: 1,
-      userName: "Andres Ardila",
-      userImage: "../../Assets/Andres.jpg",
-      comment: "Gracias por la inforación",
-    },
-    {
-      id: 2,
-      userName: "Rocio Hernández Kopp",
-      userImage: "../../Assets/Rocio.jpg",
-      comment: "Importante!!",
-    },
-  ],
-});
+const initialState = [
+  {
+    id: 1,
+    isLiked: false,
+    likes: 5,
+    title: "Mejore su salud y su bienestar",
+    date: "12/15/2022",
+    imgSrc: "../../Assets/1.png",
+    comments: [
+      {
+        id: 1,
+        userName: "Rocio Hernández Kopp",
+        userImage: "../../Assets/Rocio.jpg",
+        comment: "Gracias por la inforación",
+      },
+    ],
+  },
+  {
+    id: 2,
+    isLiked: false,
+    likes: 1,
+    title: "Analista de inventarios área administración DAAS y activos",
+    date: "12/15/2022",
+    imgSrc: "../../Assets/2.png",
+    comments: [
+      {
+        id: 1,
+        userName: "Andres Ardila",
+        userImage: "../../Assets/Andres.jpg",
+        comment: "Gracias por la inforación",
+      },
+      {
+        id: 2,
+        userName: "Rocio Hernández Kopp",
+        userImage: "../../Assets/Rocio.jpg",
+        comment: "Maravillosa Oferta",
+      },
+    ],
+  },
+  {
+    id: 3,
+    isLiked: false,
+    likes: 2,
+    title: "Cierres viales los días 25 al 29 de septiembre",
+    date: "12/15/2022",
+    imgSrc: "../../Assets/3.png",
+    comments: [
+      {
+        id: 1,
+        userName: "Andres Ardila",
+        userImage: "../../Assets/Andres.jpg",
+        comment: "Gracias por la inforación",
+      },
+      {
+        id: 2,
+        userName: "Rocio Hernández Kopp",
+        userImage: "../../Assets/Rocio.jpg",
+        comment: "Importante!!",
+      },
+    ],
+  },
+  {
+    id: 4,
+    isLiked: false,
+    likes: 2,
+    title: "Feliz día del amor y la amistad",
+    date: "12/15/2022",
+    imgSrc: "../../Assets/4.png",
+    comments: [
+      {
+        id: 1,
+        userName: "Andres Ardila",
+        userImage: "../../Assets/Andres.jpg",
+        comment: "Gracias por la inforación",
+      },
+      {
+        id: 2,
+        userName: "Rocio Hernández Kopp",
+        userImage: "../../Assets/Rocio.jpg",
+        comment: "Feliz día para todos",
+      },
+    ],
+  },
+  {
+    id: 5,
+    isLiked: false,
+    likes: 2,
+    title: "Inconvenientes de movilidad debido al día del carro",
+    date: "12/15/2022",
+    imgSrc: "../../Assets/5.png",
+    comments: [
+      {
+        id: 1,
+        userName: "Andres Ardila",
+        userImage: "../../Assets/Andres.jpg",
+        comment: "Gracias por la inforación",
+      },
+      {
+        id: 2,
+        userName: "Rocio Hernández Kopp",
+        userImage: "../../Assets/Rocio.jpg",
+        comment: "Importante!!",
+      },
+    ],
+  },
+];

@@ -34,7 +34,7 @@ function CardFooter({ id }) {
       <input
         type="text"
         className="add-comment"
-        placeholder="Add a comment..."
+        placeholder="Agrega Un Comentario..."
         value={textComment}
         onChange={handleInput}
         onKeyPress={handleKeyPress}

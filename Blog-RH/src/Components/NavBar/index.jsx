@@ -1,9 +1,17 @@
+import { useContext } from "react";
+import { ContextApp } from "../../Context";
 import { NavLink } from "react-router-dom";
 import "./styles.css";
 
 const borderBottom = "2px solid white";
 
 function NavBar() {
+  const { searchData, setSearchData } = useContext(ContextApp);
+
+  const handleInputChange = (e) => {
+    setSearchData(e.target.value);
+  };
+
   return (
     <header>
       <nav className="nabvar">
@@ -30,8 +38,13 @@ function NavBar() {
         </div>
 
         <div className="nabvar-right">
-          <input type="text" placeholder="Search" />
-          <button></button>
+          <input
+            type="text"
+            placeholder="Buscar Publicación..."
+            value={searchData}
+            onChange={handleInputChange}
+          />
+          <button type="button"></button>
         </div>
       </nav>
     </header>
@@ -39,7 +52,7 @@ function NavBar() {
 }
 
 const routes = [];
-routes.push({ to: "/", label: "Home" });
+routes.push({ to: "/", label: "Inicio" });
 // routes.push({ to: "/about", label: "About" });
 // routes.push({ to: "/contact", label: "Contact" });
 
