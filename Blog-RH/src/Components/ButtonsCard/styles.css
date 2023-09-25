@@ -1,23 +1,27 @@
 .card-content {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: repeat(auto-fit, 4rem);
   padding: 0.7rem;
+  margin: 0.5rem 0;
 }
 
-.card-content button:nth-child(2) {
-  grid-column: 3;
-  justify-self: center;
+.card-buttons {
+  display: flex;
+  align-items: center;
 }
 
-.card-content button {
+.card-buttons button {
+  border: none;
+  /* border-right: 2px solid var(--purple); */
   background: none;
   cursor: pointer;
-  border: none;
+  outline: none;
+  padding: 0 0.5rem 0 0;
 }
 
 .icon-container {
-  display: grid;
-  grid-template-columns: minmax(auto, auto) minmax(auto, 3rem);
+  display: flex;
+  align-items: center;
 }
 
 .icon-container span {
@@ -25,24 +29,6 @@
   align-items: center;
   height: 100%;
 }
-
-.count-item {
-  display: flex;
-  align-items: center;
-  margin-left: 0.2rem;
-  font-size: 1.4rem;
-  height: 100%;
-}
-
-.count-item .two {
-  margin-left: 0;
-  margin-right: 0.5rem;
-}
-
-/* .isLiked button svg {
-  stroke: red;
-}
- */
 
 .icon-heart:hover svg {
   stroke: red;

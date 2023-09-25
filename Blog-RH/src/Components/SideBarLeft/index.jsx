@@ -4,7 +4,11 @@ function SideBarLeft() {
   return (
     <div className="nav-left">
       <nav>
+      <div className="carousel-header-container">
+          <h2 className="carousel-header">Nuestros beneficios</h2>
+        </div>
         <div className="carousel">
+          
           {routes.map((route) => (
             <div className="carousel-card" key={route.id}>
               <a href={`#${route.to}`}>{route.label}</a>

@@ -14,8 +14,8 @@ function ButtonsCard({ item }) {
       ""
     ) : (
       <button className="icon-container" onClick={() => handleOpen(item.id)}>
-        <span className="count-item two">{item.comments.length}</span>
         <CommentIcon size="25" />
+        <span className="count-item">{item.comments.length}</span>
       </button>
     );
 
@@ -39,16 +39,21 @@ function ButtonsCard({ item }) {
 
   return (
     <div className="card-content">
-      <button className="icon-container">
-        <span
-          className={classIsLiked}
-          onClick={() => handleLikeCallback(item.id)}
-        >
-          <HeartIcon size="25" animation={isAnimated ? "icon-animation" : ""} />
-        </span>
-        <span className="count-item">{likes}</span>
-      </button>
-      {comments}
+      <div className="card-buttons">
+        <button className="icon-container">
+          <span
+            className={classIsLiked}
+            onClick={() => handleLikeCallback(item.id)}
+          >
+            <HeartIcon
+              size="25"
+              animation={isAnimated ? "icon-animation" : ""}
+            />
+          </span>
+          <span className="count-item">{likes}</span>
+        </button>
+        {comments}
+      </div>
     </div>
   );
 }
