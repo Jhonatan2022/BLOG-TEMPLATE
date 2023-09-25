@@ -5,14 +5,12 @@
   /* background-color: var(--purple-light); */
   box-shadow: var(--box-shadow-cards);
   background-color: #ffffffec;
-  border-radius: 0 1rem 0 0;
+  border-radius: 1rem 1rem 0 0;
   overflow: hidden;
   overflow-y: scroll;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
+.nav-left nav {
   width: 90%;
 }
 
@@ -23,27 +21,41 @@ nav {
   width: 100%;
 }
 
+.carousel-header-container {
+  position: sticky;
+  top: 0;
+  background-color: var(--white);
+  z-index: 1; /*título encima del contenido*/
+}
+
+.carousel-header {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 1rem 0;
+  color: var(--purple);
+}
+
 .carousel-card {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 12rem;
-  /* padding: 2rem; */
+  min-height: 13rem;
   font-size: 1.8rem;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   border: 2px solid var(--purple);
   font-weight: bold;
   cursor: pointer;
   background-color: #ffffff;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   border-radius: 2rem;
   transition: background-color 0.3s; /* Animación de cambio de color al pasar el ratón */
 }
 
-.carousel-card:last-child {
+/* .carousel-card:last-child {
   margin-bottom: 0;
-}
+} */
 
 .carousel-card:hover {
   background-color: var(--purple);

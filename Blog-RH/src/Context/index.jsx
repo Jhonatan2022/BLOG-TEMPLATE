@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
+import { formattedDate } from '../Utils/CurrentDate';
 
 const ContextApp = createContext();
 
@@ -39,12 +40,15 @@ function ContextProvider({ children }) {
     return id + 1;
   };
 
+  
+
   const handleComment = (id, comment) => {
     const newData = data.map((item) => {
       const comments = item.comments.length;
       if (item.id === id) {
         item.comments.push({
           id: idCommentImprovised(comments),
+          date: formattedDate,
           userName: "Alejandro Sighinolfi",
           userImage: "../../Assets/Alejandro.jpg",
           comment: comment,
@@ -121,6 +125,7 @@ const initialState = [
     comments: [
       {
         id: 1,
+        date: "12/15/2022",
         userName: "Rocio Hernández Kopp",
         userImage: "../../Assets/Rocio.jpg",
         comment: "Gracias por la inforación",
@@ -137,12 +142,14 @@ const initialState = [
     comments: [
       {
         id: 1,
+        date: "12/15/2022",
         userName: "Andres Ardila",
         userImage: "../../Assets/Andres.jpg",
         comment: "Gracias por la inforación",
       },
       {
         id: 2,
+        date: "12/15/2022",
         userName: "Rocio Hernández Kopp",
         userImage: "../../Assets/Rocio.jpg",
         comment: "Maravillosa Oferta",
@@ -159,12 +166,14 @@ const initialState = [
     comments: [
       {
         id: 1,
+        date: "12/15/2022",
         userName: "Andres Ardila",
         userImage: "../../Assets/Andres.jpg",
         comment: "Gracias por la inforación",
       },
       {
         id: 2,
+        date: "12/15/2022",
         userName: "Rocio Hernández Kopp",
         userImage: "../../Assets/Rocio.jpg",
         comment: "Importante!!",
@@ -181,12 +190,14 @@ const initialState = [
     comments: [
       {
         id: 1,
+        date: "12/15/2022",
         userName: "Andres Ardila",
         userImage: "../../Assets/Andres.jpg",
         comment: "Gracias por la inforación",
       },
       {
         id: 2,
+        date: "12/15/2022",
         userName: "Rocio Hernández Kopp",
         userImage: "../../Assets/Rocio.jpg",
         comment: "Feliz día para todos",
@@ -203,12 +214,14 @@ const initialState = [
     comments: [
       {
         id: 1,
+        date: "12/15/2022",
         userName: "Andres Ardila",
         userImage: "../../Assets/Andres.jpg",
         comment: "Gracias por la inforación",
       },
       {
         id: 2,
+        date: "12/15/2022",
         userName: "Rocio Hernández Kopp",
         userImage: "../../Assets/Rocio.jpg",
         comment: "Importante!!",

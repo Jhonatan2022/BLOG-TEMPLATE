@@ -1,4 +1,4 @@
-.comments-container{
+.comments-container {
   margin-left: 4.5rem;
   max-height: 15rem;
   margin-bottom: 1rem;
@@ -13,7 +13,7 @@
 .comment {
   display: grid;
   grid-template-columns: minmax(4rem, 4rem) auto;
-  padding: 1rem 1rem 0;
+  padding: 1rem 0.5rem 0.5rem;
   background-color: var(--purple);
   border-radius: 1rem;
   font-size: 1.2rem;
@@ -26,9 +26,7 @@
 
 .avatar-user {
   display: flex;
-  /* align-items: center; */
   justify-content: center;
-  /* height: 100%; */
 }
 
 .avatar-user img {
@@ -40,19 +38,26 @@
 
 .info-comment {
   color: var(--white);
-  padding: 0 .5rem;
+  padding: 0 0.5rem 0.5rem;
   display: grid;
   grid-template-rows: auto auto;
 }
 
-.name-user {
-  letter-spacing: .1rem;
+.name-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: .5rem;
   font-size: 1.2rem;
+}
+.name-user {
   font-weight: bold;
 }
 
+.date {
+  text-align: right;
+}
+
 .comment-text {
-  grid-area: 2;
   font-size: 1.2rem;
 }

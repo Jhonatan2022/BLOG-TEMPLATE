@@ -1,8 +1,11 @@
-function SideBarRight(){
-    return(
-        <h1>right</h1>
-                
-    )
+function SideBarRight() {
+  return (
+    <div className="nav-left">
+      <nav>
+        <div className="carousel"></div>
+      </nav>
+    </div>
+  );
 }
 
 export { SideBarRight };

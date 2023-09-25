@@ -15,8 +15,10 @@ function Comment({ item }) {
               />
             </picture>
             <span className="info-comment">
-              <span className="name-user">{comment.userName}</span>
-              <br />
+              <div className="name-date">
+                <p className="name-user">{comment.userName}</p>
+                <p className="date">{comment.date}</p>
+              </div>
               <p className="comment-text">{comment.comment}</p>
             </span>
           </div>
