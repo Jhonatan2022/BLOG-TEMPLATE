@@ -44,6 +44,7 @@ function CardFooter({ id }) {
         className="btn-send"
         onClick={() => handleCommentCallback(id, textComment)}
         disabled={!textComment.trim()}
+        aria-label="Enviar Comentario"
       >
         <SendIcon />
       </button>

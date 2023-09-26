@@ -17,6 +17,7 @@
   position: absolute;
   display: flex;
   box-shadow: var(--box-shadow-cards);
+  background-color: var(--white);
   left: -5rem;
   overflow: hidden;
   border-top-left-radius: 1rem;
@@ -26,8 +27,8 @@
 
 .menu-options button {
   padding: 4px;
-  background: var(--white);
   border: none;
+  background: none;
   width: 100%;
 }
 

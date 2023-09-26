@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
-import { formattedDate } from '../Utils/CurrentDate';
+import { formattedDate } from '../Utils/currentDate';
 
 const ContextApp = createContext();
 
@@ -12,6 +12,7 @@ function ContextProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const [searchData, setSearchData] = useState(""); // Valor input search
   const [filterData, setFilterData] = useState(data); // Publicaciones filtradas
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -78,6 +79,7 @@ function ContextProvider({ children }) {
     loading,
     searchData,
     filterData, // Publicaciones filtradas para el contexto
+    darkMode,
   };
 
   const statesModifiers = {
@@ -87,6 +89,7 @@ function ContextProvider({ children }) {
     setShowModal,
     setLoading,
     setSearchData,
+    setDarkMode,
   };
 
   const actions = {

@@ -6,10 +6,12 @@ import { ButtonSeting } from "../ButtonSetting";
 import { CardFooter } from "../CardFooter";
 import { LazyLoadingImg } from "../../Utils/LazyLoading";
 import { LoadingSkeleton } from "../LoadingSkeleton";
+import { themeDark } from "../../Utils/themeDark";
 import "./styles.css";
 
 function Card() {
-  const { filterData, open, loading, setLoading } = useContext(ContextApp);
+  const { filterData, open, loading, setLoading, darkMode } =
+    useContext(ContextApp);
 
   useEffect(() => {
     setLoading(true);
@@ -23,13 +25,14 @@ function Card() {
       {loading && <LoadingSkeleton />}
       {filterData.length === 0 && <h1 className="no-data">No hay datos</h1>}
       {filterData.map((item) => (
-        <div className="card" key={item.id}>
+        <div className="card" key={item.id} style={themeDark("CARD", darkMode)}>
           <div className="card-header">
-            <h2 className="card-title">{item.title}</h2>
+            <h2 className="card-title" style={themeDark('CARD_TITLE', darkMode)} >{item.title}</h2>
             <ButtonSeting
               id={item.id}
               title={item.title}
               imgSrc={item.imgSrc}
+              darkMode={darkMode}
             />
             <span className="card-date">{item.date}</span>
           </div>
