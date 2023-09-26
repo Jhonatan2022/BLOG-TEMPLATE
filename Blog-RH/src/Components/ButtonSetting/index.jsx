@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 import { ContextApp } from "../../Context";
 import { EditModal } from "../EditModal";
 import { SettingIcon, DeleteIcon, EditIcon } from "../Icons";
+import { themeDark } from "../../Utils/themeDark";
 import "./styles.css";
 
-function ButtonSeting({ id, title, imgSrc }) {
+function ButtonSeting({ id, title, imgSrc, darkMode }) {
   const {
     data,
     setData,
@@ -29,6 +30,8 @@ function ButtonSeting({ id, title, imgSrc }) {
     setModalData({ id, title, imgSrc });
   };
 
+  const iconDark = darkMode ? themeDark("CARD_ICON", darkMode) : "";
+
   return (
     <div className="options">
       <button
@@ -36,7 +39,7 @@ function ButtonSeting({ id, title, imgSrc }) {
         className="btn-options"
         onClick={() => handleOpenOptions(id)}
       >
-        <SettingIcon size="25" />
+        <SettingIcon color={iconDark} size="25" />
       </button>
       {openOptions === id && (
         <ul className="menu-options">
@@ -59,6 +62,7 @@ ButtonSeting.propTypes = {
   id: PropTypes.number,
   title: PropTypes.string,
   imgSrc: PropTypes.string,
+  darkMode: PropTypes.bool,
 };
 
 export { ButtonSeting };

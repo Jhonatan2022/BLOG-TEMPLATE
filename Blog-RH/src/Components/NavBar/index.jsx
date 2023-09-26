@@ -1,15 +1,21 @@
 import { useContext } from "react";
-import { ContextApp } from "../../Context";
 import { NavLink } from "react-router-dom";
+import { ContextApp } from "../../Context";
+import { SunIcon, MoonIcon } from "../Icons";
 import "./styles.css";
 
 const borderBottom = "2px solid white";
 
 function NavBar() {
-  const { searchData, setSearchData } = useContext(ContextApp);
+  const { searchData, setSearchData, setDarkMode, darkMode } =
+    useContext(ContextApp);
 
   const handleInputChange = (e) => {
     setSearchData(e.target.value);
+  };
+
+  const handleDarkMode = () => {
+    setDarkMode(!darkMode);
   };
 
   return (
@@ -40,11 +46,22 @@ function NavBar() {
         <div className="nabvar-right">
           <input
             type="text"
+            className="search"
             placeholder="Buscar Publicación..."
             value={searchData}
             onChange={handleInputChange}
           />
-          <button type="button"></button>
+          <button
+            type="button"
+            className="btn-dark-mode"
+            onClick={handleDarkMode}
+            aria-label="Dark Mode"
+          >
+            {darkMode ? (
+              <span className="icon-mod"><MoonIcon /> </span>
+            ) : ( <span className="icon-mod"><SunIcon /> </span>
+            )}
+          </button>
         </div>
       </nav>
     </header>

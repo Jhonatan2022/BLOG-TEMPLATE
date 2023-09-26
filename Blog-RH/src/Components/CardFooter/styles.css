@@ -4,7 +4,7 @@
   grid-template-columns: minmax(4rem, 4rem) 1fr minmax(5rem, 5rem);
 }
 
-.add-comment-container input {
+.add-comment {
   grid-area: 1 / 2;
   padding: 1rem;
   min-width: 160px;
@@ -13,16 +13,16 @@
   font-size: 1.2rem;
 }
 
-input::placeholder {
+.add-comment::placeholder {
   color: var(--purple);
 }
 
-.add-comment-container input:focus {
+.add-comment:focus {
   outline: none;
   border: 2px solid var(--purple);
 }
 
-.add-comment-container button {
+.btn-send {
   grid-area: 1 / 3;
   display: flex;
   align-items: center;
@@ -34,10 +34,10 @@ input::placeholder {
   cursor: pointer;
 }
 
-.add-comment-container button:hover {
+.btn-send:hover {
   background-color: var(--purple);
 }
 
-.add-comment-container button:hover svg{
+.btn-send:hover svg {
   stroke: var(--white);
 }
