@@ -9,7 +9,7 @@ function ContextProvider({ children }) {
   const [open, setOpen] = useState(false);
   const [openOptions, setOpenOptions] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const [searchData, setSearchData] = useState(""); // Valor input search
   const [filterData, setFilterData] = useState(data); // Publicaciones filtradas
   const [darkMode, setDarkMode] = useState(false);
@@ -51,7 +51,7 @@ function ContextProvider({ children }) {
           id: idCommentImprovised(comments),
           date: formattedDate,
           userName: "Alejandro Sighinolfi",
-          userImage: "../../Assets/Alejandro.jpg",
+          userImage: "https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/Alejandro.jpg",
           comment: comment,
         });
       }
@@ -76,7 +76,7 @@ function ContextProvider({ children }) {
     open,
     openOptions,
     showModal,
-    loading,
+    // loading,
     searchData,
     filterData, // Publicaciones filtradas para el contexto
     darkMode,
@@ -87,7 +87,7 @@ function ContextProvider({ children }) {
     setOpen,
     setOpenOptions,
     setShowModal,
-    setLoading,
+    // setLoading,
     setSearchData,
     setDarkMode,
   };
@@ -124,13 +124,13 @@ const initialState = [
     likes: 5,
     title: "Mejore su salud y su bienestar",
     date: "12/15/2022",
-    imgSrc: "../../Assets/1.png",
+    imgSrc: "https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/1.png",
     comments: [
       {
         id: 1,
         date: "12/15/2022",
         userName: "Rocio Hernández Kopp",
-        userImage: "../../Assets/Rocio.jpg",
+        userImage: "https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/Rocio.jpg",
         comment: "Gracias por la inforación",
       },
     ],
@@ -141,20 +141,20 @@ const initialState = [
     likes: 1,
     title: "Analista de inventarios área administración DAAS y activos",
     date: "12/15/2022",
-    imgSrc: "../../Assets/2.png",
+    imgSrc: "https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/2.png",
     comments: [
       {
         id: 1,
         date: "12/15/2022",
         userName: "Andres Ardila",
-        userImage: "../../Assets/Andres.jpg",
+        userImage: "https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/Andres.jpg",
         comment: "Gracias por la inforación",
       },
       {
         id: 2,
         date: "12/15/2022",
         userName: "Rocio Hernández Kopp",
-        userImage: "../../Assets/Rocio.jpg",
+        userImage: "https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/Rocio.jpg",
         comment: "Maravillosa Oferta",
       },
     ],
@@ -165,20 +165,20 @@ const initialState = [
     likes: 2,
     title: "Cierres viales los días 25 al 29 de septiembre",
     date: "12/15/2022",
-    imgSrc: "../../Assets/3.png",
+    imgSrc: "https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/3.png",
     comments: [
       {
         id: 1,
         date: "12/15/2022",
         userName: "Andres Ardila",
-        userImage: "../../Assets/Andres.jpg",
+        userImage: "https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/Andres.jpg",
         comment: "Gracias por la inforación",
       },
       {
         id: 2,
         date: "12/15/2022",
         userName: "Rocio Hernández Kopp",
-        userImage: "../../Assets/Rocio.jpg",
+        userImage: "https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/Rocio.jpg",
         comment: "Importante!!",
       },
     ],
@@ -189,20 +189,20 @@ const initialState = [
     likes: 2,
     title: "Feliz día del amor y la amistad",
     date: "12/15/2022",
-    imgSrc: "../../Assets/4.png",
+    imgSrc: "https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/4.png",
     comments: [
       {
         id: 1,
         date: "12/15/2022",
         userName: "Andres Ardila",
-        userImage: "../../Assets/Andres.jpg",
+        userImage: "https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/Andres.jpg",
         comment: "Gracias por la inforación",
       },
       {
         id: 2,
         date: "12/15/2022",
         userName: "Rocio Hernández Kopp",
-        userImage: "../../Assets/Rocio.jpg",
+        userImage: "https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/Rocio.jpg",
         comment: "Feliz día para todos",
       },
     ],
@@ -213,20 +213,20 @@ const initialState = [
     likes: 2,
     title: "Inconvenientes de movilidad debido al día del carro",
     date: "12/15/2022",
-    imgSrc: "../../Assets/5.png",
+    imgSrc: "https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/5.png",
     comments: [
       {
         id: 1,
         date: "12/15/2022",
         userName: "Andres Ardila",
-        userImage: "../../Assets/Andres.jpg",
+        userImage: "https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/Andres.jpg",
         comment: "Gracias por la inforación",
       },
       {
         id: 2,
         date: "12/15/2022",
         userName: "Rocio Hernández Kopp",
-        userImage: "../../Assets/Rocio.jpg",
+        userImage: "https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/Rocio.jpg",
         comment: "Importante!!",
       },
     ],
