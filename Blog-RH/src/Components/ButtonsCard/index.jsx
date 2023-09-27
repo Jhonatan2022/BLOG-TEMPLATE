@@ -2,20 +2,22 @@ import PropTypes from "prop-types";
 import { useCallback, useContext, useState } from "react";
 import { ContextApp } from "../../Context";
 import { CommentIcon, HeartIcon } from "../Icons";
+import { themeDark } from "../../Utils/themeDark";
 import "./styles.css";
 
 function ButtonsCard({ item }) {
-  const { setOpen, open, handleLike } = useContext(ContextApp);
+  const { setOpen, open, handleLike, darkMode } = useContext(ContextApp);
   const [isAnimated, setIsAnimated] = useState(false);
 
   const likes = item.likes === 0 ? "" : item.likes;
+  const iconDark = darkMode ? themeDark("CARD_ICON", darkMode) : "";
   const comments =
     item.comments.length === 0 ? (
       ""
     ) : (
       <button className="icon-container" onClick={() => handleOpen(item.id)}>
-        <CommentIcon size="25" />
-        <span className="count-item">{item.comments.length}</span>
+        <CommentIcon color={iconDark} size="25"  />
+        <span className="count-item" style={themeDark('CARD_TEXT', darkMode)}>{item.comments.length}</span>
       </button>
     );
 
@@ -46,11 +48,12 @@ function ButtonsCard({ item }) {
             onClick={() => handleLikeCallback(item.id)}
           >
             <HeartIcon
+            color={iconDark}
               size="25"
               animation={isAnimated ? "icon-animation" : ""}
             />
           </span>
-          <span className="count-item">{likes}</span>
+          <span className="count-item" style={themeDark('CARD_TEXT', darkMode)}>{likes}</span>
         </button>
         {comments}
       </div>

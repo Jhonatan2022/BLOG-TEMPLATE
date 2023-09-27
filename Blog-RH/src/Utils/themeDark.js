@@ -4,11 +4,13 @@ function themeDark(label, darkMode) {
   }
 }
 
+
+
 const stylesObject = {
   CARD: {
     backgroundColor: "var(--dark-card)",
   },
-  CARD_TITLE: {
+  CARD_TEXT: {
     color: "var(--white)",
   },
   CARD_ICON: "var(--white)",
