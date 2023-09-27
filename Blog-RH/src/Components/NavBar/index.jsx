@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { ContextApp } from "../../Context";
 import { SunIcon, MoonIcon } from "../Icons";
@@ -10,12 +10,22 @@ function NavBar() {
   const { searchData, setSearchData, setDarkMode, darkMode } =
     useContext(ContextApp);
 
+  useEffect(() => {
+    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const savedDarkMode = localStorage.getItem("darkMode");
+    setDarkMode(savedDarkMode === null ? prefersDarkMode : savedDarkMode === "true");
+  }, [setDarkMode]);
+
   const handleInputChange = (e) => {
     setSearchData(e.target.value);
   };
 
   const handleDarkMode = () => {
-    setDarkMode(!darkMode);
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+
+    // Guardar el valor en localStorage para recordarlo
+    localStorage.setItem("darkMode", newDarkMode.toString());
   };
 
   return (
@@ -58,8 +68,13 @@ function NavBar() {
             aria-label="Dark Mode"
           >
             {darkMode ? (
-              <span className="icon-mod"><MoonIcon /> </span>
-            ) : ( <span className="icon-mod"><SunIcon /> </span>
+              <span className="icon-mod">
+                <MoonIcon />{" "}
+              </span>
+            ) : (
+              <span className="icon-mod">
+                <SunIcon />{" "}
+              </span>
             )}
           </button>
         </div>

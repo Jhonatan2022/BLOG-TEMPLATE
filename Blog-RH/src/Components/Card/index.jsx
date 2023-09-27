@@ -27,14 +27,14 @@ function Card() {
       {filterData.map((item) => (
         <div className="card" key={item.id} style={themeDark("CARD", darkMode)}>
           <div className="card-header">
-            <h2 className="card-title" style={themeDark('CARD_TITLE', darkMode)} >{item.title}</h2>
+            <h2 className="card-title" style={themeDark('CARD_TEXT', darkMode)} >{item.title}</h2>
             <ButtonSeting
               id={item.id}
               title={item.title}
               imgSrc={item.imgSrc}
               darkMode={darkMode}
             />
-            <span className="card-date">{item.date}</span>
+            <span className="card-date" style={themeDark('CARD_TEXT', darkMode)}>{item.date}</span>
           </div>
           <figure className="img-container">
             <LazyLoadingImg
