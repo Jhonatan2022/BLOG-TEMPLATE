@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { ContextApp } from "../../Context";
 import { SunIcon, MoonIcon } from "../Icons";
+import { LazyLoadingImg } from '../../Utils/LazyLoading';
 import "./styles.css";
 
 const borderBottom = "2px solid white";
@@ -34,9 +35,10 @@ function NavBar() {
         <div className="nabvar-left">
           <figure className="logo">
             <NavLink to="/">
-              <img
-                src="https://talento.colsof.co/static/media/LOGO_SONAR_2.1981e9bb6be7ae85aee7.png"
-                alt="logo"
+              <LazyLoadingImg
+                src="https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/logo.png"
+                alt="Colsoft"
+                title="Colsoft"
               />
             </NavLink>
           </figure>

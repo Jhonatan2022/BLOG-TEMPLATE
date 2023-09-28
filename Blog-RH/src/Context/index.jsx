@@ -124,7 +124,7 @@ const initialState = [
     likes: 5,
     title: "Mejore su salud y su bienestar",
     date: "12/15/2022",
-    imgSrc: "https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/1.png",
+    imgSrc: "../Assets/1.png",
     comments: [
       {
         id: 1,

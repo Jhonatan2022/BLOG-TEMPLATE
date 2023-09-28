@@ -38,7 +38,7 @@ function CommentIcon({ color, size }) {
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={2}
-      stroke={color || "#1b1464"}
+      stroke={color || "var(--purple)"}
       width={size || "20"}
       height={size || "20"}
     >
@@ -58,7 +58,7 @@ function SendIcon({ color, size }) {
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={2}
-      stroke={color || "#1b1464"}
+      stroke={color || "var(--purple)"}
       width={size || "20"}
       height={size || "20"}
     >
@@ -78,7 +78,7 @@ function LikeIcon({ color, size }) {
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={2}
-      stroke={color || "#1b1464"}
+      stroke={color || "var(--purple)"}
       width={size || "20"}
       height={size || "20"}
     >
@@ -98,7 +98,7 @@ function HeartIcon({ color, size, animation }) {
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={2}
-      stroke={color || "#1b1464"}
+      stroke={color || "var(--purple)"}
       width={size || "20"}
       height={size || "20"}
       className={animation || ""}
@@ -120,7 +120,7 @@ function DeleteIcon({ color, size }) {
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={2}
-      stroke={color || "#1b1464"}
+      stroke={color || "var(--purple)"}
       width={size || "20"}
       height={size || "20"}
     >
@@ -140,7 +140,7 @@ function EditIcon({ color, size }) {
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={2}
-      stroke={color || "#1b1464"}
+      stroke={color || "var(--purple)"}
       width={size || "20"}
       height={size || "20"}
     >
@@ -160,7 +160,7 @@ function CancelIcon({ color, size }) {
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={4}
-      stroke={color || "#1b1464"}
+      stroke={color || "var(--purple)"}
       width={size || "20"}
       height={size || "20"}
     >
@@ -180,7 +180,7 @@ function SunIcon({ color, size }) {
       viewBox="0 0 24 24"
       fill="currentColor"
       strokeWidth={2}
-      stroke={color || "#1b1464"}
+      stroke={color || "var(--purple)"}
       width={size || "20"}
       height={size || "20"}
     >
@@ -196,7 +196,7 @@ function MoonIcon({ color, size }) {
       viewBox="0 0 24 24"
       fill="currentColor"
       strokeWidth={2}
-      stroke={color || "#1b1464"}
+      stroke={color || "var(--purple)"}
       width={size || "20"}
       height={size || "20"}
     >
