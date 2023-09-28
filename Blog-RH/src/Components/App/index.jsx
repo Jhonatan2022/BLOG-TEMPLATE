@@ -3,7 +3,7 @@ import { NavBar } from "../NavBar";
 import { Home } from "../Home";
 
 function App() {
-  return <>
+  return (
     <BrowserRouter>
       <NavBar />
       <Routes>
@@ -11,7 +11,7 @@ function App() {
         <Route path="*" element={<h1>Not Found 404</h1>} />
       </Routes>
     </BrowserRouter>
-  </>;
+  );
 }
 
 export { App };

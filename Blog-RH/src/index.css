@@ -1,11 +1,13 @@
 :root {
   --white: #ffffff;
   --red: #ff0000;
-  --purple: #1b1464;
-  --text: #333;
-  --purple-light: #1b146417;
-  --box-shadow-cards: 0px 6px 11px 0px rgba(27, 20, 100, 0.5);
   --blue-light: #0058ff;
+  
+  --text: #333;
+  
+  --purple: #1b1464;
+  --background-light: #1b146417;
+  --box-shadow-cards: 0px 6px 11px 0px rgba(27, 20, 100, 0.5);
   --dark-card: #1b1464;
 }
 

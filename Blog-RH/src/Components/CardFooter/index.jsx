@@ -2,6 +2,7 @@ import { useCallback, useContext, useState } from "react";
 import PropTypes from "prop-types";
 import { ContextApp } from "../../Context";
 import { SendIcon } from "../Icons";
+import { LazyLoadingImg } from "../../Utils/LazyLoading";
 import "./styles.css";
 
 function CardFooter({ id }) {
@@ -29,7 +30,11 @@ function CardFooter({ id }) {
   return (
     <div className="add-comment-container">
       <picture className="avatar-user">
-        <img src="../../../Assets/Alejandro.jpg" alt="user" />
+        <LazyLoadingImg
+          src="https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/Alejandro.jpg"
+          alt="avatar"
+          title="avatar"
+        />
       </picture>
       <input
         type="text"
