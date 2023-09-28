@@ -6,7 +6,7 @@
   background-color: var(--purple);
   padding: 0.5rem 2rem;
   z-index: 2;
-  border-bottom-right-radius: 1rem;
+  border-radius: 0 0 1rem 1rem;
 }
 
 .nabvar-left {

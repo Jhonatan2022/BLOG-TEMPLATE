@@ -25,9 +25,21 @@ function ButtonSeting({ id, title, imgSrc, darkMode }) {
     setOpenOptions(openOptions === id ? false : id);
   };
 
-  const handleEdit = (id) => {
+  // const handleEdit = (id) => {
+  //   setShowModal(true);
+  //   setModalData({ id, title, imgSrc });
+  // };
+
+  // Convertimos handleEdir en una función asíncrona
+  const handleEdit = async (id) => {
+    // Mostramos el modal
     setShowModal(true);
+    // Esperamos a que se cargue el componente EditModal
+    // const { EditModal } = await import("../EditModal");
+    // Guardamos los datos del post a editar en el estado
     setModalData({ id, title, imgSrc });
+    // Guardamos el componente EditModal en el estado
+    // setModalData(EditModal);
   };
 
   const iconDark = darkMode ? themeDark("CARD_ICON", darkMode) : "";
