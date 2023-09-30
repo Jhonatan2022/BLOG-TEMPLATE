@@ -178,9 +178,9 @@ function SunIcon({ color, size }) {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
-      fill="currentColor"
-      strokeWidth={2}
-      stroke={color || "var(--purple)"}
+      fill={color || "var(--white)"}
+      strokeWidth={1}
+      stroke={color || "var(--white)"}
       width={size || "20"}
       height={size || "20"}
     >
@@ -194,9 +194,9 @@ function MoonIcon({ color, size }) {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
-      fill="currentColor"
+      fill={color || "var(--black)"}
       strokeWidth={2}
-      stroke={color || "var(--purple)"}
+      stroke={color || "var(--black)"}
       width={size || "20"}
       height={size || "20"}
     >

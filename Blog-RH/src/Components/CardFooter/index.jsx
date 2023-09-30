@@ -3,11 +3,13 @@ import PropTypes from "prop-types";
 import { ContextApp } from "../../Context";
 import { SendIcon } from "../Icons";
 import { LazyLoadingImg } from "../../Utils/LazyLoading";
+import { themeDark } from "../../Utils/ThemeDark";
 import "./styles.css";
 
-function CardFooter({ id }) {
+function CardFooter({ id, darkMode }) {
   const { handleComment } = useContext(ContextApp);
   const [textComment, setTextComment] = useState("");
+  const iconDark = darkMode ? themeDark("CARD_ICON", darkMode) : "";
 
   const handleInput = (e) => {
     setTextComment(e.target.value);
@@ -37,21 +39,23 @@ function CardFooter({ id }) {
         />
       </picture>
       <input
+        style={themeDark("BORDER_LABEL", darkMode)}
         type="text"
-        className="add-comment"
+        className={darkMode ? "add-comment-dark" : "add-comment"}
         placeholder="Agrega Un Comentario..."
         value={textComment}
         onChange={handleInput}
         onKeyPress={handleKeyPress}
       />
       <button
+        style={themeDark("BUTTON_CARD", darkMode)}
         type="button"
-        className="btn-send"
+        className={darkMode ? "btn-send-dark" : "btn-send"}
         onClick={() => handleCommentCallback(id, textComment)}
         disabled={!textComment.trim()}
         aria-label="Enviar Comentario"
       >
-        <SendIcon />
+        <SendIcon color={iconDark} />
       </button>
     </div>
   );
@@ -59,6 +63,7 @@ function CardFooter({ id }) {
 
 CardFooter.propTypes = {
   id: PropTypes.number.isRequired,
+  darkMode: PropTypes.bool.isRequired,
 };
 
 export { CardFooter };

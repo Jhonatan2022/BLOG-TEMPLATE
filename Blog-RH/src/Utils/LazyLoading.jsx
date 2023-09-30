@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 
-function LazyLoadingImg({ src, title, alt }) {
+function LazyLoadingImg({ src, title, alt, className }) {
   const [isVisible, setIsVisible] = useState(false);
   const imgRef = useRef(null);
 
@@ -30,7 +30,7 @@ function LazyLoadingImg({ src, title, alt }) {
   }, []);
 
   return (
-    <img ref={imgRef} src={isVisible ? src : ""} alt={alt} title={title} />
+    <img ref={imgRef} className={className}  src={isVisible ? src : ""} alt={alt} title={title} />
   );
 }
 
@@ -38,6 +38,7 @@ LazyLoadingImg.propTypes = {
   src: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 export { LazyLoadingImg };
