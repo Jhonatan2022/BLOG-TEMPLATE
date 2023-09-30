@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { ContextApp } from "../../Context";
 import { SunIcon, MoonIcon } from "../Icons";
-import { LazyLoadingImg } from '../../Utils/LazyLoading';
+import { LazyLoadingImg } from "../../Utils/LazyLoading";
 import { themeDark } from "../../Utils/ThemeDark";
 import "./styles.css";
 
@@ -13,9 +13,13 @@ function NavBar() {
     useContext(ContextApp);
 
   useEffect(() => {
-    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const prefersDarkMode = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
     const savedDarkMode = localStorage.getItem("darkMode");
-    setDarkMode(savedDarkMode === null ? prefersDarkMode : savedDarkMode === "true");
+    setDarkMode(
+      savedDarkMode === null ? prefersDarkMode : savedDarkMode === "true"
+    );
   }, [setDarkMode]);
 
   const handleInputChange = (e) => {
@@ -32,13 +36,13 @@ function NavBar() {
 
   return (
     <header>
-      <nav className="nabvar"
-        style={themeDark('NAVBAR', darkMode)}
-      >
+      <nav className="nabvar" style={themeDark("NAVBAR", darkMode)}>
         <div className="nabvar-left">
-          <figure className="logo">
+          <figure className="logo-container">
             <NavLink to="/">
               <LazyLoadingImg
+                style={themeDark("LOGO", darkMode)}
+                className={darkMode ? "logo-dark" : "logo"}
                 src="https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/logo.png"
                 alt="Colsoft"
                 title="Colsoft"

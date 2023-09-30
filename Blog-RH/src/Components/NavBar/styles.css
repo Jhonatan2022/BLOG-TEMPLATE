@@ -14,14 +14,19 @@
   align-items: center;
 }
 
-.nabvar-left .logo {
+.logo-container {
   max-width: 4rem;
   margin-right: 2rem;
 }
 
-.nabvar-left .logo img {
+.logo {
   width: 100%;
   filter: drop-shadow(2px 4px 6px black);
+}
+
+.logo-dark {
+  width: 100%;
+  filter: drop-shadow(2px 4px 6px rgba(255, 255, 255, 0.414));
 }
 
 .nabvar-left a {

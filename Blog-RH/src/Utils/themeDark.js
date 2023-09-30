@@ -8,6 +8,9 @@ const stylesObject = {
   NAVBAR: {
     backgroundColor: "var(--nav-dark)",
   },
+  LOGO: {
+    
+  },
   MAIN_CONTAINER: {
     backgroundColor: "var(--main-dark)",
   },
@@ -40,7 +43,10 @@ const stylesObject = {
   CARD_LEFT:{
     border: "2px solid var(--border-gray-dark)",
     boxShadow: "var(--box-shadow-cards-dark)",
-  }
+  },
+  MODAL_BACKGROUND: {
+    backgroundColor: "var(--modal-background-dark)",
+  },
 };
 
 export { themeDark };

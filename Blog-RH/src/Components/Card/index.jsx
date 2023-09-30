@@ -17,7 +17,7 @@ function Card({ darkMode }) {
       className="main-section"
       style={themeDark("CONTAINER_CARD", darkMode)}
     >
-      {filterData.length === 0 && <h1 className="no-data">No hay datos</h1>}
+      {filterData.length === 0 && <h1 className="no-data" style={themeDark('CARD_TEXT', darkMode)} >No hay datos</h1>}
       {filterData.map((item) => (
         <div className="card" key={item.id} style={themeDark("CARD", darkMode)}>
           <div className="card-header">
@@ -45,7 +45,7 @@ function Card({ darkMode }) {
             />
           </figure>
           <ButtonsCard item={item} darkMode={darkMode} />
-          {open === item.id && <Comment item={item} />}
+          {open === item.id && <Comment item={item} darkMode={darkMode} />}
           <CardFooter id={item.id} darkMode={darkMode} />
         </div>
       ))}

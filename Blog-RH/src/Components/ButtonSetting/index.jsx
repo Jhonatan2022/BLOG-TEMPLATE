@@ -55,7 +55,7 @@ function ButtonSeting({ id, title, imgSrc, darkMode }) {
         </ul>
       )}
       {showModal && modalData && modalData.id === id && (
-        <EditModal data={modalData} />
+        <EditModal data={modalData} darkMode={darkMode} />
       )}
     </div>
   );
