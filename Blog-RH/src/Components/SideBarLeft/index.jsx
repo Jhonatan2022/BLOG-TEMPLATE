@@ -1,16 +1,29 @@
+import { PropTypes } from "prop-types";
+import { themeDark } from "../../Utils/ThemeDark";
 import "./styles.css";
 
-function SideBarLeft() {
+function SideBarLeft({ darkMode }) {
   return (
-    <div className="nav-left">
+    <div className="nav-left" style={themeDark("CONTAINER_CARD", darkMode)}>
       <nav>
-      <div className="carousel-header-container">
-          <h2 className="carousel-header">Nuestros beneficios</h2>
+        <div
+          className="carousel-header-container"
+          style={themeDark("CONTAINER_CARD", darkMode)}
+        >
+          <h2
+            className="carousel-header"
+            style={themeDark("CARD_TEXT", darkMode)}
+          >
+            Nuestros beneficios
+          </h2>
         </div>
         <div className="carousel">
-          
           {routes.map((route) => (
-            <div className="carousel-card" key={route.id}>
+            <div
+              className={darkMode ? "carousel-item-dark" : "carousel-item"}
+              style={themeDark("CARD_LEFT", darkMode)}
+              key={route.id}
+            >
               <a href={`#${route.to}`}>{route.label}</a>
             </div>
           ))}
@@ -19,6 +32,10 @@ function SideBarLeft() {
     </div>
   );
 }
+
+SideBarLeft.propTypes = {
+  darkMode: PropTypes.bool,
+};
 
 const routes = [];
 routes.push({ id: 1, to: "Banco", label: "Banco" });

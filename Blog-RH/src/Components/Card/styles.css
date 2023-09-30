@@ -28,7 +28,7 @@
   max-height: 35.772rem;
   min-height: 35.772rem;
   border-radius: 2.2rem;
-  border: 2px solid rgb(129, 129, 129);
+  border: 2px solid var(--gray);
 }
 
 .img-container img {

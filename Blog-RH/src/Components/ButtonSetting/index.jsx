@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { ContextApp } from "../../Context";
 import { EditModal } from "../EditModal";
 import { SettingIcon, DeleteIcon, EditIcon } from "../Icons";
-import { themeDark } from "../../Utils/themeDark";
+import { themeDark } from "../../Utils/ThemeDark";
 import "./styles.css";
 
 function ButtonSeting({ id, title, imgSrc, darkMode }) {
@@ -25,21 +25,10 @@ function ButtonSeting({ id, title, imgSrc, darkMode }) {
     setOpenOptions(openOptions === id ? false : id);
   };
 
-  // const handleEdit = (id) => {
-  //   setShowModal(true);
-  //   setModalData({ id, title, imgSrc });
-  // };
-
   // Convertimos handleEdir en una función asíncrona
-  const handleEdit = async (id) => {
-    // Mostramos el modal
+  const handleEdit = (id) => {
     setShowModal(true);
-    // Esperamos a que se cargue el componente EditModal
-    // const { EditModal } = await import("../EditModal");
-    // Guardamos los datos del post a editar en el estado
     setModalData({ id, title, imgSrc });
-    // Guardamos el componente EditModal en el estado
-    // setModalData(EditModal);
   };
 
   const iconDark = darkMode ? themeDark("CARD_ICON", darkMode) : "";
@@ -54,12 +43,14 @@ function ButtonSeting({ id, title, imgSrc, darkMode }) {
         <SettingIcon color={iconDark} size="25" />
       </button>
       {openOptions === id && (
-        <ul className="menu-options">
+        <ul className="menu-options"
+          style={themeDark("CONTAINER_CARD", darkMode)}
+        >
           <button className="edit" onClick={() => handleEdit(id)}>
-            <EditIcon size="25" />
+            <EditIcon color={iconDark} size="25" />
           </button>
           <button className="delete" onClick={() => handleDelete(id)}>
-            <DeleteIcon size="25" />
+            <DeleteIcon color={iconDark} size="25" />
           </button>
         </ul>
       )}

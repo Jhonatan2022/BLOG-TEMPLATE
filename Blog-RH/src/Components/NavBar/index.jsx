@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { ContextApp } from "../../Context";
 import { SunIcon, MoonIcon } from "../Icons";
 import { LazyLoadingImg } from '../../Utils/LazyLoading';
+import { themeDark } from "../../Utils/ThemeDark";
 import "./styles.css";
 
 const borderBottom = "2px solid white";
@@ -31,7 +32,9 @@ function NavBar() {
 
   return (
     <header>
-      <nav className="nabvar">
+      <nav className="nabvar"
+        style={themeDark('NAVBAR', darkMode)}
+      >
         <div className="nabvar-left">
           <figure className="logo">
             <NavLink to="/">
@@ -57,13 +60,16 @@ function NavBar() {
 
         <div className="nabvar-right">
           <input
+            style={themeDark("BORDER_LABEL", darkMode)}
             type="text"
-            className="search"
+            className={darkMode ? "search-dark" : "search"}
             placeholder="Buscar Publicación..."
             value={searchData}
             onChange={handleInputChange}
+            aria-label="Buscar Publicación"
           />
           <button
+            style={themeDark("BUTTON", darkMode)}
             type="button"
             className="btn-dark-mode"
             onClick={handleDarkMode}
@@ -71,11 +77,11 @@ function NavBar() {
           >
             {darkMode ? (
               <span className="icon-mod">
-                <MoonIcon />{" "}
+                <SunIcon />
               </span>
             ) : (
               <span className="icon-mod">
-                <SunIcon />{" "}
+                <MoonIcon />
               </span>
             )}
           </button>
