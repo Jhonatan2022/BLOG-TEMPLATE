@@ -12,4 +12,5 @@ function SideBarRight({ darkMode }) {
   );
 }
 
-export { SideBarRight };
+// export { SideBarRight };
+export default SideBarRight;

@@ -1,13 +1,12 @@
-import PropTypes from "prop-types";
 import { useCallback, useContext, useState } from "react";
 import { ContextApp } from "../../Context";
-import { CancelIcon } from "../Icons";
-import { themeDark } from "../../Utils/ThemeDark";
+import Icons from "../Icons";
+import { themeDark } from "../../Utils/themeDark";
 import "./styles.css";
 
-function EditModal({ data, darkMode }) {
-  const { setShowModal, handleEditPost, setOpenOptions } =
-    useContext(ContextApp);
+function EditModal({ setShowModal, data, darkMode }) {
+  const { handleEditPost, setOpenOptions } = useContext(ContextApp);
+  const { CancelIcon } = Icons();
   const [valueTitle, setValueTitle] = useState(data.title);
   const [valueImgSrc, setValueImgSrc] = useState(data.imgSrc);
   const iconDark = darkMode ? themeDark("CARD_ICON", darkMode) : "";
@@ -76,9 +75,5 @@ function EditModal({ data, darkMode }) {
   );
 }
 
-EditModal.propTypes = {
-  data: PropTypes.object,
-  darkMode: PropTypes.bool.isRequired,
-};
-
-export { EditModal };
+// export { EditModal };
+export default EditModal;

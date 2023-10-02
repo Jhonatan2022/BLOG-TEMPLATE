@@ -1,5 +1,4 @@
-import PropTypes from "prop-types";
-import { themeDark } from "../../Utils/ThemeDark";
+import { themeDark } from "../../Utils/themeDark";
 import "./styles.css";
 
 function Comment({ item, darkMode }) {
@@ -7,9 +6,11 @@ function Comment({ item, darkMode }) {
     <div className="comments-container">
       <div className="comments">
         {item.comments.map((comment) => (
-          <div className="comment" 
+          <div
+            className="comment"
             style={themeDark("CONTAINER_CARD", darkMode)}
-            key={comment.id}>
+            key={comment.id}
+          >
             <picture className="avatar-user">
               <img
                 src={comment.userImage}
@@ -31,9 +32,5 @@ function Comment({ item, darkMode }) {
   );
 }
 
-Comment.propTypes = {
-  item: PropTypes.object.isRequired,
-  darkMode: PropTypes.bool.isRequired,
-};
-
-export { Comment };
+// export { Comment };
+export default Comment;

@@ -1,13 +1,13 @@
 import { useCallback, useContext, useState } from "react";
-import PropTypes from "prop-types";
 import { ContextApp } from "../../Context";
-import { SendIcon } from "../Icons";
-import { LazyLoadingImg } from "../../Utils/LazyLoading";
-import { themeDark } from "../../Utils/ThemeDark";
+import Icons from "../Icons";
+import LazyLoadingImg from "../../Utils/LazyLoadingImg";
+import { themeDark } from "../../Utils/themeDark";
 import "./styles.css";
 
 function CardFooter({ id, darkMode }) {
   const { handleComment } = useContext(ContextApp);
+  const { SendIcon } = Icons();
   const [textComment, setTextComment] = useState("");
   const iconDark = darkMode ? themeDark("CARD_ICON", darkMode) : "";
 
@@ -31,7 +31,7 @@ function CardFooter({ id, darkMode }) {
 
   return (
     <div className="add-comment-container">
-      <picture className="avatar-user">
+      <picture>
         <LazyLoadingImg
           src="https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/Alejandro.jpg"
           alt="avatar"
@@ -61,9 +61,5 @@ function CardFooter({ id, darkMode }) {
   );
 }
 
-CardFooter.propTypes = {
-  id: PropTypes.number.isRequired,
-  darkMode: PropTypes.bool.isRequired,
-};
-
-export { CardFooter };
+// export { CardFooter };
+export default CardFooter;

@@ -1,5 +1,4 @@
-import { PropTypes } from "prop-types";
-import { themeDark } from "../../Utils/ThemeDark";
+import { themeDark } from "../../Utils/themeDark";
 import "./styles.css";
 
 function SideBarLeft({ darkMode }) {
@@ -33,10 +32,6 @@ function SideBarLeft({ darkMode }) {
   );
 }
 
-SideBarLeft.propTypes = {
-  darkMode: PropTypes.bool,
-};
-
 const routes = [];
 routes.push({ id: 1, to: "Banco", label: "Banco" });
 routes.push({ id: 2, to: "Cuenta", label: "Cuenta" });
@@ -45,4 +40,5 @@ routes.push({ id: 4, to: "Prestamo", label: "Préstamo" });
 routes.push({ id: 7, to: "Fondos", label: "Fondos" });
 routes.push({ id: 8, to: "Credito", label: "Crédito" });
 
-export { SideBarLeft };
+// export { SideBarLeft };
+export default SideBarLeft;
