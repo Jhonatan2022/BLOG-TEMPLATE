@@ -1,16 +1,17 @@
+import { lazy, Suspense } from "react";
 import { useContext, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { ContextApp } from "../../Context";
-import { SunIcon, MoonIcon } from "../Icons";
-import { LazyLoadingImg } from "../../Utils/LazyLoading";
-import { themeDark } from "../../Utils/ThemeDark";
+import Icons from "../Icons";
+import { themeDark } from "../../Utils/themeDark";
 import "./styles.css";
+const LazyLoadingImg = lazy(() => import("../../Utils/LazyLoadingImg"));
 
 const borderBottom = "2px solid white";
 
-function NavBar() {
-  const { searchData, setSearchData, setDarkMode, darkMode } =
-    useContext(ContextApp);
+function NavBar({ darkMode, setDarkMode }) {
+  const { searchData, setSearchData } = useContext(ContextApp);
+  const { MoonIcon, SunIcon } = Icons();
 
   useEffect(() => {
     const prefersDarkMode = window.matchMedia(
@@ -40,13 +41,15 @@ function NavBar() {
         <div className="nabvar-left">
           <figure className="logo-container">
             <NavLink to="/">
-              <LazyLoadingImg
-                style={themeDark("LOGO", darkMode)}
-                className={darkMode ? "logo-dark" : "logo"}
-                src="https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/logo.png"
-                alt="Colsoft"
-                title="Colsoft"
-              />
+              <Suspense fallback={<div className="loader"></div>}>
+                <LazyLoadingImg
+                  style={themeDark("LOGO", darkMode)}
+                  className={darkMode ? "logo-dark" : "logo"}
+                  src="https://raw.githubusercontent.com/Jhonatan2022/BLOG-TEMPLATE/main/Blog-RH/Assets/logo.png"
+                  alt="Colsoft"
+                  title="Colsoft"
+                />
+              </Suspense>
             </NavLink>
           </figure>
           {routes.map((route) => (
@@ -100,4 +103,5 @@ routes.push({ to: "/", label: "Inicio" });
 // routes.push({ to: "/about", label: "About" });
 // routes.push({ to: "/contact", label: "Contact" });
 
-export { NavBar };
+// export { NavBar };
+export default NavBar;

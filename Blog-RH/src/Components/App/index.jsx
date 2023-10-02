@@ -1,15 +1,22 @@
+import { useContext, lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { NavBar } from "../NavBar";
-import { Home } from "../Home";
+import { ContextApp } from "../../Context";
+const NavBar = lazy(() => import("../NavBar"));
+const Home = lazy(() => import("../Home"));
 
 function App() {
+  const { darkMode, setDarkMode } = useContext(ContextApp);
+
   return (
     <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<h1>Not Found 404</h1>} />
-      </Routes>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
+
+        <Routes>
+          <Route path="/" element={<Home darkMode={darkMode} />} />
+          <Route path="*" element={<h1>404</h1>} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }

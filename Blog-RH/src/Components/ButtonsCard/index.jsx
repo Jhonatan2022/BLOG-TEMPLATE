@@ -1,12 +1,12 @@
-import PropTypes from "prop-types";
 import { useCallback, useContext, useState } from "react";
 import { ContextApp } from "../../Context";
-import { CommentIcon, HeartIcon } from "../Icons";
-import { themeDark } from "../../Utils/ThemeDark";
+import Icons from "../Icons";
+import { themeDark } from "../../Utils/themeDark";
 import "./styles.css";
 
 function ButtonsCard({ item, darkMode }) {
   const { setOpen, open, handleLike} = useContext(ContextApp);
+  const { HeartIcon, CommentIcon } = Icons();
   const [isAnimated, setIsAnimated] = useState(false);
 
   const likes = item.likes === 0 ? "" : item.likes;
@@ -65,9 +65,5 @@ function ButtonsCard({ item, darkMode }) {
   );
 }
 
-ButtonsCard.propTypes = {
-  item: PropTypes.object.isRequired,
-  darkMode: PropTypes.bool.isRequired,
-};
-
-export { ButtonsCard };
+// export { ButtonsCard };
+export default ButtonsCard;

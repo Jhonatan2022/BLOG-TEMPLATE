@@ -1,10 +1,9 @@
-import { useContext, useState } from "react";
-import PropTypes from "prop-types";
+import { useContext, useState, lazy, Suspense } from "react";
 import { ContextApp } from "../../Context";
-import { EditModal } from "../EditModal";
-import { SettingIcon, DeleteIcon, EditIcon } from "../Icons";
-import { themeDark } from "../../Utils/ThemeDark";
+import Icons from "../Icons";
+import { themeDark } from "../../Utils/themeDark";
 import "./styles.css";
+const EditModal = lazy(() => import("../EditModal"));
 
 function ButtonSeting({ id, title, imgSrc, darkMode }) {
   const {
@@ -15,6 +14,7 @@ function ButtonSeting({ id, title, imgSrc, darkMode }) {
     showModal,
     setShowModal,
   } = useContext(ContextApp);
+  const { DeleteIcon, EditIcon, SettingIcon } = Icons();
   const [modalData, setModalData] = useState(null);
 
   const handleDelete = (id) => {
@@ -43,7 +43,8 @@ function ButtonSeting({ id, title, imgSrc, darkMode }) {
         <SettingIcon color={iconDark} size="25" />
       </button>
       {openOptions === id && (
-        <ul className="menu-options"
+        <ul
+          className="menu-options"
           style={themeDark("CONTAINER_CARD", darkMode)}
         >
           <button className="edit" onClick={() => handleEdit(id)}>
@@ -55,17 +56,17 @@ function ButtonSeting({ id, title, imgSrc, darkMode }) {
         </ul>
       )}
       {showModal && modalData && modalData.id === id && (
-        <EditModal data={modalData} darkMode={darkMode} />
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <EditModal
+            darkMode={darkMode}
+            setShowModal={setShowModal}
+            data={modalData}
+          />
+        </Suspense>
       )}
     </div>
   );
 }
 
-ButtonSeting.propTypes = {
-  id: PropTypes.number,
-  title: PropTypes.string,
-  imgSrc: PropTypes.string,
-  darkMode: PropTypes.bool,
-};
-
-export { ButtonSeting };
+// export { ButtonSeting };
+export default ButtonSeting;
