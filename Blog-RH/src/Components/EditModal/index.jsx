@@ -42,7 +42,9 @@ function EditModal({ setShowModal, data, darkMode }) {
             <CancelIcon color={iconDark} />
           </button>
         </div>
-        <form className="form">
+        <form className="form" 
+          encType="multipart/form-data"
+        >
           <input
             style={themeDark("BORDER_LABEL", darkMode)}
             className="add-comment-container"
