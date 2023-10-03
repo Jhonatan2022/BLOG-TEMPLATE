@@ -1,9 +1,10 @@
 import { lazy, Suspense } from "react";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { ContextApp } from "../../Context";
 import Icons from "../Icons";
 import { themeDark } from "../../Utils/themeDark";
+import useDarkMode from "../../Hook/useDarkMode";
 import "./styles.css";
 const LazyLoadingImg = lazy(() => import("../../Utils/LazyLoadingImg"));
 
@@ -13,15 +14,7 @@ function NavBar({ darkMode, setDarkMode }) {
   const { searchData, setSearchData } = useContext(ContextApp);
   const { MoonIcon, SunIcon } = Icons();
 
-  useEffect(() => {
-    const prefersDarkMode = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    const savedDarkMode = localStorage.getItem("darkMode");
-    setDarkMode(
-      savedDarkMode === null ? prefersDarkMode : savedDarkMode === "true"
-    );
-  }, [setDarkMode]);
+  useDarkMode();
 
   const handleInputChange = (e) => {
     setSearchData(e.target.value);
