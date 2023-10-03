@@ -16,7 +16,6 @@ function App() {
           <Route path="/" element={<Home darkMode={darkMode} />} />
           <Route path="*" element={<h1>404</h1>} />
         </Routes>
-        
       </Suspense>
     </BrowserRouter>
   );

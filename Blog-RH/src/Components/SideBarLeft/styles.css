@@ -63,7 +63,7 @@
 
 .carousel-item {
   background-color: var(--white);
-  transition: background-color 0.4s;
+  transition: background-color 0.3s;
 }
 
 .carousel-item a {
@@ -84,7 +84,7 @@
 
 .carousel-item-dark {
   /* background-color: var(--black); */
-  transition: background-color 0.4s;
+  transition: background-color 0.3s;
 }
 
 .carousel-item-dark a {
@@ -93,7 +93,7 @@
 
 .carousel-item-dark:hover {
   background-color: var(--black);
-  transition: background-color 0.4s;
+  transition: background-color 0.3s;
 }
 
 .carousel-item-dark:hover a {

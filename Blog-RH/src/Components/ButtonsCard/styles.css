@@ -12,7 +12,6 @@
 
 .card-buttons button {
   border: none;
-  /* border-right: 2px solid var(--purple); */
   background: none;
   cursor: pointer;
   outline: none;
