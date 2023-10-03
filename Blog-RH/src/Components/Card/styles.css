@@ -25,7 +25,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  max-height: 35.772rem;
   min-height: 35.772rem;
   border-radius: 2.2rem;
   border: 2px solid var(--gray);
@@ -53,4 +52,13 @@
   font-size: 1rem;
   color: var(--purple);
   font-weight: 400;
+}
+
+/* Desktop */
+@media screen and (min-width: 1200px) {
+  .img-container {
+    /* min-height: 41.7rem; */
+    /* min-height: 46.7rem; */
+    min-height: 40.5;
+  }
 }
